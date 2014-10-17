@@ -1,0 +1,156 @@
+###
+### This file is generated automatically.  DO NOT MODIFY BY HAND!
+###
+
+aligns/KmerAlignCore.o: $(SRC)/aligns/KmerAlignCore.cc $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/src/DNAVector.h 
+base/ErrorHandling.o: $(SRC)/base/ErrorHandling.cc $(SRC)/base/ErrorHandling.h 
+base/FileParser.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.cc $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/util/mutil.h 
+base/StreamParser.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StreamParser.cc $(SRC)/base/StreamParser.h $(SRC)/util/mutil.h 
+base/StringUtil.o: $(SRC)/base/StringUtil.cc $(SRC)/base/StringUtil.h 
+base/ThreadHandler.o: $(SRC)/base/ThreadHandler.cc $(SRC)/base/ThreadHandler.h 
+base/WebServer.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/WebServer.cc $(SRC)/base/WebServer.h $(SRC)/extern/mongoose/mongoose.h $(SRC)/util/mutil.h 
+extern/mongoose/mongoose.o: $(SRC)/extern/mongoose/mongoose.cc $(SRC)/extern/mongoose/mongoose.h 
+src/Alignment.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/src/Alignment.cc $(SRC)/src/Alignment.h $(SRC)/src/DNAVector.h 
+src/AlignmentBlock.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/src/AlignmentBlock.cc $(SRC)/src/AlignmentBlock.h $(SRC)/util/mutil.h 
+src/CodonTranslate.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/extern/logger/log.h $(SRC)/src/CodonTranslate.cc $(SRC)/src/CodonTranslate.h $(SRC)/src/DNAVector.h 
+src/Cola/AlignmentCola.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/src/Alignment.h $(SRC)/src/Cola/AlignerParams.h $(SRC)/src/Cola/AlignmentCola.cc $(SRC)/src/Cola/AlignmentCola.h $(SRC)/src/Cola/EditGraph.h $(SRC)/src/DNAVector.h 
+src/Cola/Cola.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/src/Alignment.h $(SRC)/src/Cola/AlignerParams.h $(SRC)/src/Cola/AlignmentCola.h $(SRC)/src/Cola/Cola.cc $(SRC)/src/Cola/Cola.h $(SRC)/src/Cola/EditGraph.h $(SRC)/src/Cola/IAligner.h $(SRC)/src/Cola/NSGAaligner.h $(SRC)/src/Cola/NSaligner.h $(SRC)/src/Cola/SWGAaligner.h $(SRC)/src/DNAVector.h 
+src/Cola/EditGraph.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/src/Cola/EditGraph.cc $(SRC)/src/Cola/EditGraph.h $(SRC)/src/DNAVector.h 
+src/Cola/NSGAaligner.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/src/Alignment.h $(SRC)/src/Cola/AlignerParams.h $(SRC)/src/Cola/AlignmentCola.h $(SRC)/src/Cola/EditGraph.h $(SRC)/src/Cola/IAligner.h $(SRC)/src/Cola/NSGAaligner.cc $(SRC)/src/Cola/NSGAaligner.h $(SRC)/src/Cola/NSaligner.h $(SRC)/src/Cola/SWGAaligner.h $(SRC)/src/DNAVector.h 
+src/Cola/NSaligner.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/src/Alignment.h $(SRC)/src/Cola/AlignerParams.h $(SRC)/src/Cola/AlignmentCola.h $(SRC)/src/Cola/EditGraph.h $(SRC)/src/Cola/IAligner.h $(SRC)/src/Cola/NSaligner.cc $(SRC)/src/Cola/NSaligner.h $(SRC)/src/DNAVector.h 
+src/Cola/SWGAaligner.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/src/Alignment.h $(SRC)/src/Cola/AlignerParams.h $(SRC)/src/Cola/AlignmentCola.h $(SRC)/src/Cola/EditGraph.h $(SRC)/src/Cola/IAligner.h $(SRC)/src/Cola/NSaligner.h $(SRC)/src/Cola/SWGAaligner.cc $(SRC)/src/Cola/SWGAaligner.h $(SRC)/src/DNAVector.h 
+src/Coordinate.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/src/AlignmentBlock.h $(SRC)/src/Coordinate.cc $(SRC)/src/Coordinate.h $(SRC)/util/mutil.h 
+src/CrossCorr.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/extern/RealFFT/DynArray.h $(SRC)/extern/RealFFT/DynArray.hpp $(SRC)/extern/RealFFT/FFTReal.h $(SRC)/extern/RealFFT/FFTReal.hpp $(SRC)/extern/RealFFT/OscSinCos.h $(SRC)/extern/RealFFT/OscSinCos.hpp $(SRC)/extern/RealFFT/def.h $(SRC)/src/Blosum.h $(SRC)/src/CodonTranslate.h $(SRC)/src/CrossCorr.cc $(SRC)/src/CrossCorr.h $(SRC)/src/DNAVector.h 
+src/DNAVector.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/extern/logger/log.h $(SRC)/src/AlignmentBlock.h $(SRC)/src/Coordinate.h $(SRC)/src/DNAVector.cc $(SRC)/src/DNAVector.h $(SRC)/util/mutil.h 
+src/MakeSixFrames.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.cc $(SRC)/src/MakeSixFrames.h 
+src/Satsuma/XCorrDynProg.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/extern/logger/log.h $(SRC)/src/Alignment.h $(SRC)/src/Blosum.h $(SRC)/src/DNAVector.h $(SRC)/src/MultiProtein.h $(SRC)/src/Satsuma/XCorrDynProg.cc $(SRC)/src/Satsuma/XCorrDynProg.h $(SRC)/src/SequenceMatch.h 
+src/SequenceMatch.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/src/SequenceMatch.cc $(SRC)/src/SequenceMatch.h $(SRC)/util/mutil.h 
+src/SequenceStream.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.h $(SRC)/src/SequenceStream.cc $(SRC)/src/SequenceStream.h $(SRC)/util/mutil.h 
+src/Smorgas/ProtNameCluster.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StreamParser.h $(SRC)/src/Alignment.h $(SRC)/src/Cola/AlignerParams.h $(SRC)/src/Cola/AlignmentCola.h $(SRC)/src/Cola/Cola.h $(SRC)/src/Cola/EditGraph.h $(SRC)/src/DNAVector.h $(SRC)/src/Smorgas/ProtNameCluster.cc $(SRC)/src/Smorgas/ProtNameCluster.h $(SRC)/util/mutil.h 
+src/Smorgas/ProtServer.o: $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StreamParser.h $(SRC)/base/StringUtil.h $(SRC)/base/ThreadHandler.h $(SRC)/extern/RealFFT/DynArray.h $(SRC)/extern/RealFFT/DynArray.hpp $(SRC)/extern/RealFFT/FFTReal.h $(SRC)/extern/RealFFT/FFTReal.hpp $(SRC)/extern/RealFFT/OscSinCos.h $(SRC)/extern/RealFFT/OscSinCos.hpp $(SRC)/extern/RealFFT/def.h $(SRC)/extern/logger/log.h $(SRC)/src/Alignment.h $(SRC)/src/CrossCorr.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.h $(SRC)/src/MultXCorr.h $(SRC)/src/MultiProtein.h $(SRC)/src/Satsuma/XCorrDynProg.h $(SRC)/src/SequenceMatch.h $(SRC)/src/SequenceStream.h $(SRC)/src/Smorgas/ProtServer.cc $(SRC)/src/Smorgas/SatsumaProt.h $(SRC)/util/SComm.h $(SRC)/util/SyncConn.h $(SRC)/util/SysTime.h $(SRC)/util/mutil.h 
+src/Smorgas/SatsumaProt.o: $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/extern/RealFFT/DynArray.h $(SRC)/extern/RealFFT/DynArray.hpp $(SRC)/extern/RealFFT/FFTReal.h $(SRC)/extern/RealFFT/FFTReal.hpp $(SRC)/extern/RealFFT/OscSinCos.h $(SRC)/extern/RealFFT/OscSinCos.hpp $(SRC)/extern/RealFFT/def.h $(SRC)/extern/logger/log.h $(SRC)/src/Alignment.h $(SRC)/src/CrossCorr.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.h $(SRC)/src/MultXCorr.h $(SRC)/src/MultiProtein.h $(SRC)/src/Satsuma/XCorrDynProg.h $(SRC)/src/SequenceMatch.h $(SRC)/src/SequenceStream.h $(SRC)/src/Smorgas/SatsumaProt.cc $(SRC)/src/Smorgas/SatsumaProt.h $(SRC)/util/SysTime.h $(SRC)/util/mutil.h 
+src/Smorgas/SmorgasCommLayer.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/base/ThreadHandler.h $(SRC)/extern/logger/log.h $(SRC)/src/Smorgas/SmorgasCommLayer.cc $(SRC)/util/FindProcess.h $(SRC)/util/SComm.h $(SRC)/util/SyncConn.h $(SRC)/util/mutil.h 
+src/Smorgas/SortProtOutput.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/logger/log.h $(SRC)/src/Smorgas/SortProtOutput.cc $(SRC)/util/mutil.h 
+src/Smorgas/TangerineServer.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/base/WebServer.h $(SRC)/extern/logger/log.h $(SRC)/extern/mongoose/mongoose.h $(SRC)/src/Smorgas/TangerineServer.cc $(SRC)/util/SComm.h $(SRC)/util/SyncConn.h $(SRC)/util/mutil.h $(SRC)/visual/Color.h $(SRC)/visual/VisualAlignments.h 
+src/Smorgas/runSatsumaProt.o: $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/RealFFT/DynArray.h $(SRC)/extern/RealFFT/DynArray.hpp $(SRC)/extern/RealFFT/FFTReal.h $(SRC)/extern/RealFFT/FFTReal.hpp $(SRC)/extern/RealFFT/OscSinCos.h $(SRC)/extern/RealFFT/OscSinCos.hpp $(SRC)/extern/RealFFT/def.h $(SRC)/extern/logger/log.h $(SRC)/src/Alignment.h $(SRC)/src/CrossCorr.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.h $(SRC)/src/MultXCorr.h $(SRC)/src/MultiProtein.h $(SRC)/src/Satsuma/XCorrDynProg.h $(SRC)/src/SequenceMatch.h $(SRC)/src/SequenceStream.h $(SRC)/src/Smorgas/SatsumaProt.h $(SRC)/src/Smorgas/runSatsumaProt.cc $(SRC)/util/SysTime.h $(SRC)/util/mutil.h 
+src/TransferProtNames.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/logger/log.h $(SRC)/src/DNAVector.h $(SRC)/src/TransferProtNames.cc $(SRC)/util/mutil.h 
+util/FindProcess.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/util/FindProcess.cc $(SRC)/util/FindProcess.h $(SRC)/util/mutil.h 
+util/SComm.o: $(SRC)/util/SComm.cc $(SRC)/util/SComm.h 
+util/SyncConn.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/util/SComm.h $(SRC)/util/SyncConn.cc $(SRC)/util/SyncConn.h $(SRC)/util/mutil.h 
+util/SysTime.o: $(SRC)/util/SysTime.cc $(SRC)/util/SysTime.h 
+util/mutil.o: $(SRC)/util/mutil.cc $(SRC)/util/mutil.h 
+visual/Color.o: $(SRC)/visual/Color.cc $(SRC)/visual/Color.h 
+visual/Eps.o: $(SRC)/visual/Eps.cc $(SRC)/visual/Eps.h 
+visual/VisualAlignments.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/RandomStuff.h $(SRC)/base/SVector.h $(SRC)/src/SequenceMatch.h $(SRC)/src/Smorgas/ProtNameCluster.h $(SRC)/util/mutil.h $(SRC)/visual/Axes.h $(SRC)/visual/Color.h $(SRC)/visual/Eps.h $(SRC)/visual/TicMarks.h $(SRC)/visual/VisualAlignments.cc $(SRC)/visual/VisualAlignments.h $(SRC)/visual/Whiteboard.h 
+ProtServer:  checkLock
+ProtServer:  aligns/KmerAlignCore.o base/ErrorHandling.o base/FileParser.o base/StreamParser.o base/StringUtil.o base/ThreadHandler.o src/Alignment.o src/AlignmentBlock.o src/CodonTranslate.o src/Coordinate.o src/CrossCorr.o src/DNAVector.o src/MakeSixFrames.o src/Satsuma/XCorrDynProg.o src/SequenceMatch.o src/SequenceStream.o src/Smorgas/ProtServer.o src/Smorgas/SatsumaProt.o util/SComm.o util/SyncConn.o util/SysTime.o util/mutil.o
+	/bin/rm -f lib_ProtServer_temp.a
+	ar -qc lib_ProtServer_temp.a $(OBJ)/aligns/KmerAlignCore.o $(OBJ)/base/ErrorHandling.o $(OBJ)/base/FileParser.o $(OBJ)/base/StreamParser.o $(OBJ)/base/StringUtil.o $(OBJ)/base/ThreadHandler.o $(OBJ)/src/Alignment.o $(OBJ)/src/AlignmentBlock.o $(OBJ)/src/CodonTranslate.o $(OBJ)/src/Coordinate.o $(OBJ)/src/CrossCorr.o $(OBJ)/src/DNAVector.o $(OBJ)/src/MakeSixFrames.o $(OBJ)/src/Satsuma/XCorrDynProg.o $(OBJ)/src/SequenceMatch.o $(OBJ)/src/SequenceStream.o $(OBJ)/src/Smorgas/ProtServer.o $(OBJ)/src/Smorgas/SatsumaProt.o $(OBJ)/util/SComm.o $(OBJ)/util/SyncConn.o $(OBJ)/util/SysTime.o $(OBJ)/util/mutil.o
+	$(BIN)/checkLock $(BIN)/$@
+	$(CPLUSPLUS) $(LINK_OPTIONS) -o $(BIN)/$@  $(OBJ)/src/Smorgas/ProtServer.o -L. $(LINK_LIBS) -l_ProtServer_temp
+	/bin/rm lib_ProtServer_temp.a
+SmorgasCommLayer:  checkLock
+SmorgasCommLayer:  base/ErrorHandling.o base/FileParser.o base/StringUtil.o base/ThreadHandler.o src/Smorgas/SmorgasCommLayer.o util/FindProcess.o util/SComm.o util/SyncConn.o util/mutil.o
+	/bin/rm -f lib_SmorgasCommLayer_temp.a
+	ar -qc lib_SmorgasCommLayer_temp.a $(OBJ)/base/ErrorHandling.o $(OBJ)/base/FileParser.o $(OBJ)/base/StringUtil.o $(OBJ)/base/ThreadHandler.o $(OBJ)/src/Smorgas/SmorgasCommLayer.o $(OBJ)/util/FindProcess.o $(OBJ)/util/SComm.o $(OBJ)/util/SyncConn.o $(OBJ)/util/mutil.o
+	$(BIN)/checkLock $(BIN)/$@
+	$(CPLUSPLUS) $(LINK_OPTIONS) -o $(BIN)/$@  $(OBJ)/src/Smorgas/SmorgasCommLayer.o -L. $(LINK_LIBS) -l_SmorgasCommLayer_temp
+	/bin/rm lib_SmorgasCommLayer_temp.a
+SortProtOutput:  checkLock
+SortProtOutput:  base/ErrorHandling.o base/FileParser.o base/StringUtil.o src/Smorgas/SortProtOutput.o util/mutil.o
+	/bin/rm -f lib_SortProtOutput_temp.a
+	ar -qc lib_SortProtOutput_temp.a $(OBJ)/base/ErrorHandling.o $(OBJ)/base/FileParser.o $(OBJ)/base/StringUtil.o $(OBJ)/src/Smorgas/SortProtOutput.o $(OBJ)/util/mutil.o
+	$(BIN)/checkLock $(BIN)/$@
+	$(CPLUSPLUS) $(LINK_OPTIONS) -o $(BIN)/$@  $(OBJ)/src/Smorgas/SortProtOutput.o -L. $(LINK_LIBS) -l_SortProtOutput_temp
+	/bin/rm lib_SortProtOutput_temp.a
+TangerineServer:  checkLock
+TangerineServer:  base/ErrorHandling.o base/FileParser.o base/StreamParser.o base/StringUtil.o base/WebServer.o extern/mongoose/mongoose.o src/Alignment.o src/AlignmentBlock.o src/Cola/AlignmentCola.o src/Cola/Cola.o src/Cola/EditGraph.o src/Cola/NSGAaligner.o src/Cola/NSaligner.o src/Cola/SWGAaligner.o src/Coordinate.o src/DNAVector.o src/SequenceMatch.o src/Smorgas/ProtNameCluster.o src/Smorgas/TangerineServer.o util/SComm.o util/SyncConn.o util/mutil.o visual/Color.o visual/Eps.o visual/VisualAlignments.o
+	/bin/rm -f lib_TangerineServer_temp.a
+	ar -qc lib_TangerineServer_temp.a $(OBJ)/base/ErrorHandling.o $(OBJ)/base/FileParser.o $(OBJ)/base/StreamParser.o $(OBJ)/base/StringUtil.o $(OBJ)/base/WebServer.o $(OBJ)/extern/mongoose/mongoose.o $(OBJ)/src/Alignment.o $(OBJ)/src/AlignmentBlock.o $(OBJ)/src/Cola/AlignmentCola.o $(OBJ)/src/Cola/Cola.o $(OBJ)/src/Cola/EditGraph.o $(OBJ)/src/Cola/NSGAaligner.o $(OBJ)/src/Cola/NSaligner.o $(OBJ)/src/Cola/SWGAaligner.o $(OBJ)/src/Coordinate.o $(OBJ)/src/DNAVector.o $(OBJ)/src/SequenceMatch.o $(OBJ)/src/Smorgas/ProtNameCluster.o $(OBJ)/src/Smorgas/TangerineServer.o $(OBJ)/util/SComm.o $(OBJ)/util/SyncConn.o $(OBJ)/util/mutil.o $(OBJ)/visual/Color.o $(OBJ)/visual/Eps.o $(OBJ)/visual/VisualAlignments.o
+	$(BIN)/checkLock $(BIN)/$@
+	$(CPLUSPLUS) $(LINK_OPTIONS) -o $(BIN)/$@  $(OBJ)/src/Smorgas/TangerineServer.o -L. $(LINK_LIBS) -l_TangerineServer_temp
+	/bin/rm lib_TangerineServer_temp.a
+TransferProtNames:  checkLock
+TransferProtNames:  base/ErrorHandling.o base/FileParser.o base/StringUtil.o src/AlignmentBlock.o src/Coordinate.o src/DNAVector.o src/TransferProtNames.o util/mutil.o
+	/bin/rm -f lib_TransferProtNames_temp.a
+	ar -qc lib_TransferProtNames_temp.a $(OBJ)/base/ErrorHandling.o $(OBJ)/base/FileParser.o $(OBJ)/base/StringUtil.o $(OBJ)/src/AlignmentBlock.o $(OBJ)/src/Coordinate.o $(OBJ)/src/DNAVector.o $(OBJ)/src/TransferProtNames.o $(OBJ)/util/mutil.o
+	$(BIN)/checkLock $(BIN)/$@
+	$(CPLUSPLUS) $(LINK_OPTIONS) -o $(BIN)/$@  $(OBJ)/src/TransferProtNames.o -L. $(LINK_LIBS) -l_TransferProtNames_temp
+	/bin/rm lib_TransferProtNames_temp.a
+runSatsumaProt:  checkLock
+runSatsumaProt:  aligns/KmerAlignCore.o base/ErrorHandling.o base/FileParser.o base/StringUtil.o src/Alignment.o src/AlignmentBlock.o src/CodonTranslate.o src/Coordinate.o src/CrossCorr.o src/DNAVector.o src/MakeSixFrames.o src/Satsuma/XCorrDynProg.o src/SequenceMatch.o src/SequenceStream.o src/Smorgas/SatsumaProt.o src/Smorgas/runSatsumaProt.o util/SysTime.o util/mutil.o
+	/bin/rm -f lib_runSatsumaProt_temp.a
+	ar -qc lib_runSatsumaProt_temp.a $(OBJ)/aligns/KmerAlignCore.o $(OBJ)/base/ErrorHandling.o $(OBJ)/base/FileParser.o $(OBJ)/base/StringUtil.o $(OBJ)/src/Alignment.o $(OBJ)/src/AlignmentBlock.o $(OBJ)/src/CodonTranslate.o $(OBJ)/src/Coordinate.o $(OBJ)/src/CrossCorr.o $(OBJ)/src/DNAVector.o $(OBJ)/src/MakeSixFrames.o $(OBJ)/src/Satsuma/XCorrDynProg.o $(OBJ)/src/SequenceMatch.o $(OBJ)/src/SequenceStream.o $(OBJ)/src/Smorgas/SatsumaProt.o $(OBJ)/src/Smorgas/runSatsumaProt.o $(OBJ)/util/SysTime.o $(OBJ)/util/mutil.o
+	$(BIN)/checkLock $(BIN)/$@
+	$(CPLUSPLUS) $(LINK_OPTIONS) -o $(BIN)/$@  $(OBJ)/src/Smorgas/runSatsumaProt.o -L. $(LINK_LIBS) -l_runSatsumaProt_temp
+	/bin/rm lib_runSatsumaProt_temp.a
+
+# Target lists
+
+OBJECTS = \
+  aligns/KmerAlignCore.o\
+  base/ErrorHandling.o\
+  base/FileParser.o\
+  base/StreamParser.o\
+  base/StringUtil.o\
+  base/ThreadHandler.o\
+  base/WebServer.o\
+  extern/mongoose/mongoose.o\
+  src/Alignment.o\
+  src/AlignmentBlock.o\
+  src/CodonTranslate.o\
+  src/Cola/AlignmentCola.o\
+  src/Cola/Cola.o\
+  src/Cola/EditGraph.o\
+  src/Cola/NSGAaligner.o\
+  src/Cola/NSaligner.o\
+  src/Cola/SWGAaligner.o\
+  src/Coordinate.o\
+  src/CrossCorr.o\
+  src/DNAVector.o\
+  src/MakeSixFrames.o\
+  src/Satsuma/XCorrDynProg.o\
+  src/SequenceMatch.o\
+  src/SequenceStream.o\
+  src/Smorgas/ProtNameCluster.o\
+  src/Smorgas/ProtServer.o\
+  src/Smorgas/SatsumaProt.o\
+  src/Smorgas/SmorgasCommLayer.o\
+  src/Smorgas/SortProtOutput.o\
+  src/Smorgas/TangerineServer.o\
+  src/Smorgas/runSatsumaProt.o\
+  src/TransferProtNames.o\
+  util/FindProcess.o\
+  util/SComm.o\
+  util/SyncConn.o\
+  util/SysTime.o\
+  util/mutil.o\
+  visual/Color.o\
+  visual/Eps.o\
+  visual/VisualAlignments.o\
+
+nolink: $(OBJECTS)
+
+EXECUTABLES = \
+  ProtServer\
+  SmorgasCommLayer\
+  SortProtOutput\
+  TangerineServer\
+  TransferProtNames\
+  runSatsumaProt\
+
+everything: $(EXECUTABLES)
+
+.PHONY: src
+src: \
+  TransferProtNames\
+  src.Smorgas\
+
+.PHONY: src.Smorgas
+src.Smorgas: \
+  ProtServer\
+  SmorgasCommLayer\
+  SortProtOutput\
+  TangerineServer\
+  runSatsumaProt\
+

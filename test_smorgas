@@ -1,0 +1,15 @@
+mkdir smorgas_test/test/
+rm smorgas_test/test/*
+
+./runSatsumaProt -t smorgas_test/transposon_db.pep_noStop -q smorgas_test/TE.fasta > smorgas_test/test/te.out
+./runSatsumaProt -t smorgas_test/tinydb.fasta -q smorgas_test/query_prot.fasta > smorgas_test/test/tiny.out
+
+./runSatsumaProt -t smorgas_test/transc_db.prot -q smorgas_test/transc.fasta > smorgas_test/test/trans.out
+
+echo
+echo Comparing results. If you do not see anything, then the test was succesful!
+echo
+
+diff smorgas_test/reference/te.out smorgas_test/test/te.out
+diff smorgas_test/reference/tiny.out smorgas_test/test/tiny.out
+diff smorgas_test/reference/trans.out smorgas_test/test/trans.out
