@@ -66,6 +66,27 @@ void SatsumaProt::readQuery(string& queryFile) {
   queryStream.Open(queryFile);
 }
 
+bool HasORF(const DNAVector & d) {
+  int last = 0;
+  int max = 0;
+  bool bOne = false;
+  for (int i=0; i<d.isize(); i++) {
+    if (d[i] == '*') {
+      bOne = true;
+      int l = i - last;
+      if (l > max)
+	max = l;
+      last = i;
+    }
+  }
+  if (!bOne)
+    return true;
+  cout << "Longest: " << max << endl;
+  if (max > 60)
+    return true;
+  return false;
+}
+
 void SatsumaProt::alignAll(ostream & o) { 
   int totalHits = 0;
   string name;
@@ -74,7 +95,16 @@ void SatsumaProt::alignAll(ostream & o) {
   //name = query.NameClean(i);
   DNAVector d;
   int i = -1;
+  int total_count = 0;
   while (queryStream.GetNext(d, name)) {
+    cout << "Processed " << total_count << endl;
+    total_count++;
+    if (!HasORF(d)) {
+      cout << "Skipped." << endl;
+      FILE_LOG(logDEBUG1) << endl << "DO NOT Start XC alignments, no frame. " <<  GetTimeStatic(params.bQuiet);
+      continue;
+    }
+    cout << "Good" << endl;
     i++;
     if (!params.bExhaust) {
       switch(params.prefilterType) {
