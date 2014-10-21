@@ -44,6 +44,8 @@ void KmerAlignCore<DataType>::AddData(const vecDNAVector & bases,
 
     if (j % 10000 == 0)
       cout << flush << "\rContigs: " << j;
+    if (b.size()-size+1 < 0) //Fix bug.
+      continue;
     baseConversions[j].resize(b.size()-size+1, -1);
     for(k=0; k <= (int)b.size()-size; k+=stepSize) {
       if (!IsRepeat(t, k, size, min) && (!filterLC || (filterLC  && !IsLowComplexity(b, k, size)))) {
