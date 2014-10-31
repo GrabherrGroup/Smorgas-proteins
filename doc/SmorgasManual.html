@@ -1,0 +1,396 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Manual</title>
+  </head>
+  <body>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <p style="margin-bottom: 0in; line-height: 100%"><b>Documentation</b></p>
+    <p style="margin-bottom: 0in; line-height: 100%"><br>
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%"><b>1. Installation</b></p>
+    <p style="margin-bottom: 0in; line-height: 100%"><b>1.1. Clone the
+        repository</b>
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%">To get the source
+      code and compile it, type:
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%">&gt; git clone
+      <a href="https://github.com/nedaz/Smorgas-proteins.git">https://github.com/nedaz/Smorgas-proteins.git</a>
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%"><br>
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%"><b>1.2. Build
+        executables</b></p>
+    <p style="margin-bottom: 0in; line-height: 100%">&gt; cd
+      Smorgas-proteins<br>
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%">&gt; make</p>
+    <p style="margin-bottom: 0in; line-height: 100%"><br>
+    </p>
+    <b>2. Prepare your
+      protein database</b>
+    <p style="margin-bottom: 0in; line-height: 100%">Smörgås reads the
+      database in multi-fasta format. For smaller databases (&lt;300K
+      entries), you can supply the entire file. For larger databases, we
+      recommend to split the file into equal-sized chunks, which will
+      both
+      reduce memory usage, as well as allowing for parallel processing.
+      You
+      can split the database by typing
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%">&gt; SplitFasta -i
+      &lt;database.fasta&gt; -n &lt;how many chunks you would like&gt;
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%">Please note that
+      the
+      number of chunks must match the number of processes you use for
+      parallel runs.
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%"><br>
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%"><b>3. Run in batch
+        mode</b></p>
+    <p style="margin-bottom: 0in; line-height: 100%"><b>3.1 Help screen
+        and arguments</b>
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      Type:
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      &gt;
+      ./runSatsumaProt </p>
+    <p style="margin-bottom: 0in; line-height: 100%">to bring up the
+      following help:
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%">./runSatsumaProt:
+      Satsuma-based (cross-correlation) protein alignment tool.
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%">Available
+      arguments:
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%">-t&lt;string&gt; :
+      target protein fasta (def=)<br>
+      -q&lt;string&gt; :
+      query protein fasta</p>
+    -db&lt;string&gt; :
+    protein database in Spines binary format (def=)<br>
+    -e&lt;bool&gt; :
+    exhaustive search (no filtering) (def=0)<br>
+    -k&lt;int&gt; :
+    k-mer size (def=4)<br>
+    -kmerStep&lt;int&gt;
+    : Step size to be used in generating filteration kmers (def=1)<br>
+    -filter&lt;int&gt; :
+    Type of prefilter of hits to use- 1:fixed distance k-mer based 2:max
+    k-mer based (def=1)<br>
+    -allowFails&lt;int&gt;
+    : Number of failures to allow before stopping the search (def=50)<br>
+    -E-value&lt;double&gt;
+    : show only alignments with better E-value (def=0.01)<br>
+    -self&lt;bool&gt; :
+    self-alignments (def=0)<br>
+    -same&lt;bool&gt; :
+    same alignments (def=0)<br>
+    -block&lt;int&gt; :
+    search only this subset (requires -e) (def=0)<br>
+    -n_blocks&lt;int&gt;
+    : number of blocks (w/ -e) (def=0)<br>
+    -rna&lt;bool&gt; :
+    Do RNA alignments (def=0)<br>
+    -timestamps&lt;bool&gt;
+    : Print time stamps (def=0)<br>
+    -m&lt;int&gt; :
+    number of results to display (def=50)<br>
+    -cutoff&lt;double&gt;
+    : show only alignments at this (ingapped) identity or higher (def=0)<br>
+    -wSlide&lt;int&gt; :
+    Filter Window slide, if set to 1 the window sliding will cover all
+    kmers. (def=2)<br>
+    -l&lt;string&gt; :
+    Application logging file (def=application.log)
+    <p style="margin-bottom: 0in; line-height: 100%"><br>
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%"><b>3.2 Running the
+        aligner</b></p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      For using the default options, type:</p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      &gt; runSatsumaProtein -t &lt;protein database&gt; -q &lt;query
+      fasta
+      file&gt; &gt; &lt;output file&gt; &amp;
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      The output will be written to stdout in human-readable format,
+      including statistics and a summary line, e.g.:
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <br>
+      <font size="-1" face="Courier New, Courier, monospace">**********************************************</font></p>
+    <font size="-1" face="Courier New, Courier, monospace"></font><font
+      size="-1" face="Courier New, Courier, monospace">Target sequence
+      size: 368</font><font size="-1" face="Courier New, Courier,
+      monospace"></font><font size="-1" face="Courier New, Courier,
+      monospace"><br>
+      Query sequence size: 757</font><font size="-1" face="Courier New,
+      Courier, monospace"><br>
+      Target offset: 1</font><font size="-1" face="Courier New, Courier,
+      monospace"><br>
+      Query offset: 200</font><font size="-1" face="Courier New,
+      Courier, monospace"><br>
+      Target aligned basepairs: 366</font><font size="-1" face="Courier
+      New, Courier, monospace"><br>
+      Query aligned basepairs: 416</font><font size="-1" face="Courier
+      New, Courier, monospace"><br>
+      Raw Score: -1</font><font size="-1" face="Courier New, Courier,
+      monospace"><br>
+      Identity score: 0.507212</font><font size="-1" face="Courier New,
+      Courier, monospace"><br>
+      Total Edit Count 171</font><font size="-1" face="Courier New,
+      Courier, monospace"><br>
+      Mean Contiguity length 0</font><font size="-1" face="Courier New,
+      Courier, monospace"><br>
+      Mod-Smith-waterman score: -2</font><font size="-1" face="Courier
+      New, Courier, monospace"><br>
+      Significance P-value: 1</font><font size="-1" face="Courier New,
+      Courier, monospace"><br>
+      ***********************************************</font><font
+      size="-1" face="Courier New, Courier, monospace">
+    </font>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%"><font size="-1" face="Courier New, Courier, monospace">
+        Query: 200
+LMNNSTGRSHVLAHPTGIDTIARSLAADNIKTKIAALEILGAVCLVPGGHKKVLTAMLNYQEYAAERARFQGIVNDLDKS
+        279</font></p>
+    <font size="-1" face="Courier New, Courier, monospace"></font><font
+      size="-1" face="Courier New, Courier, monospace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      LMNNS GR+HVL+H I+ IA+SLA +NIKTK+A LEI+GAVCLVPGGH+K+L
+      AML+YQ++A ER RFQ ++NDLD+S</font><font size="-1" face="Courier New,
+      Courier, monospace"></font><font size="-1" face="Courier New,
+      Courier, monospace"><br>
+      Sbjct: 1 &nbsp;
+LMNNSQGRAHVLSHSESINIIAQSLATENIKTKVAVLEIMGAVCLVPGGHRKILEAMLHYQKFACERTRFQTLLNDLDRS
+      80</font><font size="-1" face="Courier New, Courier, monospace">
+    </font>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <font size="-1" face="Courier New, Courier, monospace"><br>
+      </font>
+    </p>
+    <font size="-1" face="Courier New, Courier, monospace">
+    </font>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%"><font size="-1" face="Courier New, Courier, monospace">
+        Query: 280
+TGAYRDDVNLKTAIMSFINAVLNYGPGQENLEFRLHLRYEFLMLGIQPVIDKLRKHENETLNRHLDFFEMVRNEDEKELA
+        359</font></p>
+    <font size="-1" face="Courier New, Courier, monospace"></font><font
+      size="-1" face="Courier New, Courier, monospace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      TG YRD+V+LKTAIMSFINA+L+ G G+ +LEFR+HLRYEFLMLGIQP+IDKLR
+      H+N TL+RHLD+FEM+RN+DE&nbsp; LA</font><font size="-1" face="Courier
+      New, Courier, monospace"><br>
+      Sbjct: 81&nbsp;
+TGRYRDEVSLKTAIMSFINAILSQGAGETSLEFRVHLRYEFLMLGIQPIIDKLRSHDNATLDRHLDYFEMLRNDDELALA
+      160</font><font size="-1" face="Courier New, Courier, monospace">
+    </font>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <font size="-1" face="Courier New, Courier, monospace"><br>
+      </font>
+    </p>
+    <font size="-1" face="Courier New, Courier, monospace">
+    </font>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+    </p>
+    <font size="-1" face="Courier New, Courier, monospace"></font>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%"><font size="-1" face="Courier New, Courier, monospace">
+        Query: 360
+RKFNHEHVDTKSATAMFDLLRRKLSHSGAYPHLLSLLQHLLLLPHGG--PNAQHWLMFDRVVQQIVLQQEERPTSEIIDP
+        437</font></p>
+    <font size="-1" face="Courier New, Courier, monospace"></font><font
+      size="-1" face="Courier New, Courier, monospace">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      R+F H+DTKSA+ +FDL+R+K++H+ AYPH +S+L H LL+PH Q+WL+ DR+VQQ+VLQ +</font><font
+      size="-1" face="Courier New, Courier, monospace"><br>
+      Sbjct: 161
+RRFESVHIDTKSASQVFDLIRKKMNHTDAYPHFMSVLHHCLLMPHKRSGNTVQYWLLLDRIVQQMVLQ--NDKGHDPDVT
+      238</font><font size="-1" face="Courier New, Courier, monospace">
+    </font>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <font size="-1" face="Courier New, Courier, monospace"><br>
+      </font>
+    </p>
+    <font size="-1" face="Courier New, Courier, monospace">
+    </font><font size="-1" face="Courier New, Courier, monospace">
+    </font><font size="-1" face="Courier New, Courier, monospace"></font><font
+      size="-1" face="Courier New, Courier, monospace">Summary Seq_504
+      vs.
+      UniRef90_B0W4A3_Disheveled-associated_activator_of_morphogenesis_2_n=1_Tax=Culex_quinquefasciatus_RepID=B0W4A3_CULQU
+score:
+      4.83175e-07 q-coords: 200 616 t-coords: 1 367 0.507212
+      4.83175e-07</font>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%"><font size="-1" face="Courier New, Courier, monospace">
+      </font><br>
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      Note that the summary line appears after the alignment. </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <br>
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%"><b>3.3 Adjusting
+        parameters for parallel run</b></p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <br>
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      Consider lowering the -m option (number of alignments to report)
+      to
+      increase speed, e.g. if the desired number of alignments in the
+      end
+      is 50, and the program runs in 24 processes, you might set -m to
+      10.</p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <br>
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%"><b>3.4 Interpret
+        the
+        output</b></p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <br>
+    </p>
+    Note that Smörgås doe not print alignments in sorted format. To
+    sort the results (summary line only), use:
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      &gt; SortSmorgasOut -i &lt;result file&gt; -c &lt;maximum # of
+      alignments per query sequence&gt; &gt; &lt;sorted output&gt;
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      Note that the option -f, which defaults to 0.1, applies an
+      additional
+      f-vale threshold.
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      For results from parallel runs, concatenate the output and run
+      SortSmorgasOut.
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <br>
+    </p>
+    <p style="margin-bottom: 0in; line-height: 100%"><b>4. Run the web
+        server</b></p>
+    <p style="margin-bottom: 0in; line-height: 100%"><b>4.1 Data files</b></p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      Smorgas needs a number of files to run a web server. All these
+      files
+      can be found in the smorgas_server_data/ directory, and must be
+      located where the programs are executed. In this directory, there
+      are
+      also a few sample scripts (run_fp, run_plants, run_te), as well as
+      some small databases. </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      To manually start the server, cd into the directory and run:
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      &gt; ../SmorgasCommLayer -f refseq/refseq_plants.faa -server
+      localhost &gt; scl.out &amp;<br>
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">&gt; ../TangerineServer -t taxonomy.txt -col
+      plant_colors.txt &gt;
+      ts.out &amp;</p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      which intializes the server with the refseq plant database,
+      instructs
+      the server that both the communication layer, which controls the
+      processes, as well as the web server run on the same physical
+      machine
+      (localhost). </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      Please note that the supplied taxonomy.txt file (derived from the
+      NCBI taxonomy database) is not current and should be updated.
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      Supply your custom colors for display using the -col option (it
+      will
+      use defaults if not specified).
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      To parallelize the database, supply a configuration file using the
+      -c
+      option:
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      ../SmorgasCommLayer -c &lt;your config file&gt; -server localhost
+      &gt;
+      scl.out &amp;
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      The configuration file is a simple text files with two entries per
+      line, a name, and a location of the fasta file, e.g.:
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <br>
+    </p>
+    nr00 /references/databases/nr/2014_09_15/nr.fasta.0<br>
+    nr01 /references/databases/nr/2014_09_15/nr.fasta.1<br>
+    nr02 /references/databases/nr/2014_09_15/nr.fasta.2<br>
+    nr03 /references/databases/nr/2014_09_15/nr.fasta.3
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <br>
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      The communication layer will launch a number of ProtServer
+      instances
+      accoring to the number of entries in the config file.</p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <br>
+    </p>
+    <p style="margin-bottom: 0in; font-weight: normal; line-height:
+      100%">
+      <br>
+    </p>
+    <title></title>
+    <meta name="generator" content="LibreOffice 4.2.6.3 (Linux)">
+    <style type="text/css">
+	<!--
+		@page { margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 120% }
+		a:link { so-language: zxx }
+	-->
+	</style>
+  </body>
+</html>
