@@ -1,4 +1,4 @@
-#define FORCE_DEBUG
+
 
 #ifndef FPTABLE_H
 #define FPTABLE_H
@@ -40,12 +40,11 @@ class Dist
       s += m_data[i];
       m_data[i] = s;
     }
-    Smooth();
 
   }
-  void Smooth() {
+  void Smooth(int n) {
     int i, j;
-    for (i=0; i<m_data.isize(); i++) {
+    for (i=0; i<n; i++) {
       svec<double> tmp;
       //Print();
 
@@ -68,7 +67,11 @@ class Dist
     for (int i=0; i<m_data.isize(); i++)
       cout << i << " " << m_data[i] << endl;
   }
+
+  void Fit();
+
  private:
+  double Distance(double m, double s, double d, bool bPrint = false);
   int ToInt(double v) const {
     int x = (int)(v*(double)(m_data.isize() - 1));
     if (x >= m_data.isize())
@@ -87,8 +90,25 @@ class FPTable
     m_data.resize(300);
   }
 
+  double GetScore(int len, double ident) { 
+    if (ident > 1.)
+      ident = 1.;
+    int index = len;
+    double div = 1.;
+    if (len >= m_data.isize()) {
+      index = m_data.isize()-1;
+      div = (double)len/(double)(m_data.isize()-1);
+    }
+
+    double r = m_data[index].FP(ident);
+    r /= div;
+    return r;
+  }
+
   int Size() const {return m_data.isize();}
   const Dist & Table(int i) const {return m_data[i];}
+
+  void Fit();
 
   void Read(const string & fileName);
   void Write(const string & fileName);

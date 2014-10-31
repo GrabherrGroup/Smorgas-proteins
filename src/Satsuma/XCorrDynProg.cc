@@ -7,6 +7,7 @@
 #include <math.h>
 #include "src/Blosum.h"
 #include "src/MultiProtein.h"
+#include "src/Smorgas/Scoring.h"
 
 MatchDynProg::MatchDynProg(int targetStart, int targetLen) 
 {
@@ -426,6 +427,11 @@ double XCDynProg::Align(const MultiProtein & target, const MultiProtein &query,
   int lastQuery = 0;
   int firstQuery = 99999999;
   i = last;
+
+  char lastMatchLetter = 0;
+  svec<char> matchletters;
+
+
   do {
     const XCDynProgLine & l = m_matrix[mIndex];
 
@@ -463,9 +469,16 @@ double XCDynProg::Align(const MultiProtein & target, const MultiProtein &query,
     tt += target[i];
     qq += l.Letter(xx);
     if (target[i] == l.Letter(xx)) {
-      matches += 1.0;
+      matchletters.push_back(target[i]);
+
+      if (lastMatchLetter == target[i]) // Discount matches of consecutive identical aa's or nucleotides.
+	matches += 0.2;
+      else
+	matches += 1.0;
+      lastMatchLetter = target[i];
       mm += target[i];
     } else {
+      lastMatchLetter = 0;
       if (Similarity(target[i], l.Letter(xx)) > 0) {
         mm += "+";
         matches += 0.3;
@@ -502,18 +515,36 @@ double XCDynProg::Align(const MultiProtein & target, const MultiProtein &query,
   Reverse(qq);
   Reverse(mm);
   
-
+ int len_all = matchletters.isize();
+  if (len_all > 21)
+    len_all = 21;
+  UniqueSort(matchletters);
+  int len_unique = matchletters.isize();
+  double diff = len_all - len_unique;
+  matches -= 0.25*diff;
+  //cout << "Reducing from " << len_all << " by " << (diff/4) << " after " << len_unique << endl;
+  //double rr = (double)len_unique/(double)len_all;
+ 
   AlignmentInfo info(target.Sequence().isize(), query.Sequence().isize(), first, firstQuery,
                      last-first, lastQuery-firstQuery, matches, -1, score);
   m_alignment      = Alignment(target.Sequence(), query.Sequence(), info, tt, qq, mm);
   double ident     = m_alignment.getIdentityScore();
 //TODO fix Alignment pval calc
-  double p_value = GetPValue(m_alignment.getIdentityScore(), m_alignment.getMinBaseAligned(), m_expect);
-  if (matches<20 || p_value > 0.0001 || ident < cutoff) {
-    FILE_LOG(logDEBUG) << p_value << " " << strlen(qq.c_str()) << " " << ident;
-    FILE_LOG(logDEBUG) << "No alignment.";
-    return 1.;
-  }
+  //double p_value = GetPValue(m_alignment.getIdentityScore(), m_alignment.getMinBaseAligned(), m_expect);
+  
+  
+
+  ProtAlignScore pas;
+  double p_value = pas.FPVal(m_alignment.getMinBaseAligned(), m_alignment.getIdentityScore());
+
+
+  // BUG: Don't make decisions HERE!!!
+  //if (matches<20 || p_value > 0.0001 || ident < cutoff) {
+  //  FILE_LOG(logDEBUG) << p_value << " " << strlen(qq.c_str()) << " " << ident;
+  //    FILE_LOG(logDEBUG) << "No alignment.";
+  // return 1.;
+  //}
+
   if(printAlignment) {
     m_alignment.print(0, 1, o, 80, true);
   }

@@ -31,7 +31,7 @@ int main( int argc, char** argv )
   parser.Open(fileName);
 
   while (parser.ParseLine()) {
-    if (parser.GetItemCount() == 0)
+    if (parser.GetItemCount() < 13)
       continue;
     //cout << parser.Line() << endl;
     int len = parser.AsInt(11) - parser.AsInt(10);
@@ -39,7 +39,7 @@ int main( int argc, char** argv )
     double ident = parser.AsFloat(12);
     if (ident > 1.)
       ident = 1.;
-    cout << "Train " << len << " " << ident << endl;
+    //cout << "Train " << len << " " << ident << endl;
    
     tab.Add(len, ident);
   }

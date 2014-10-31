@@ -152,7 +152,8 @@ void SatsumaProt::alignAll(ostream & o) {
       MultiProtein dd(t);
 
       double pVal = dp.Align(tt, dd, filter, false);
-      double eVal = pVal * ref.size();
+      //double eVal = pVal * ref.size();
+      double eVal = pVal;
 	
       if (eVal< params.eValThresh) {
         dp.GetAlignment().print(0, 1, o, 80, true);
@@ -229,8 +230,9 @@ if (params.bSelf) {
     FILE_LOG(logDEBUG2) << "Min2=" << min2 << " Min3=" << min3 << " Min4=" << min4;
     FILE_LOG(logDEBUG2) << "Got k-mers, count. " <<  GetTimeStatic(params.bQuiet);
     for (int j=0; j<contrib.isize(); j++) {
-      if (contrib[j] >= max(maxContrib/2,4) || contrib[j] >= 8) //TODO Parmeterize
-        allhits.push_back(Hit(j, contrib[j]));
+      //if (contrib[j] >= max(((double)maxContrib)/8.,4) || contrib[j] >= 8) //TODO Parmeterize
+      //if (contrib[j] >= (double)maxContrib)/8. || contrib[j] >= 8) //TODO Parmeterize
+      allhits.push_back(Hit(j, contrib[j]));
        contrib[j] = 0;
     }
     FILE_LOG(logDEBUG2) << "Reset the quals. Total count=" << hitCount << "  " << GetTimeStatic(params.bQuiet);

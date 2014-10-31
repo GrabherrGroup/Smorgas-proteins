@@ -1,8 +1,10 @@
 #ifndef SCORING_H
 #define SCORING_H
 
+#include <math.h>
+#include "src/FScoreTable.h"
 
-double Sigmoid(double x, double s) {
+double SigmoidFS(double x, double s) {
   double y = x * s;
   double f = y*y;
   double v = y/(f+1.);
@@ -10,11 +12,11 @@ double Sigmoid(double x, double s) {
   return v;
 }
 
-double CDF(double x, double m, double s, double d)
+double CDF_FS(double x, double m, double s, double d)
 {
  
   double xx = (x-m);
-  xx = Sigmoid(xx, d);
+  xx = SigmoidFS(xx, d);
   double r = erfc((xx)/s/1.414213562)/2;
   return r;
 }
@@ -22,15 +24,27 @@ double CDF(double x, double m, double s, double d)
 class ProtAlignScore
 {
  public:
+  ProtAlignScore() {}
+
   double FPVal(int len, double ident) {
     if (ident > 1.)
       ident = 1.;
     if (len < 3)
       return 1.;
-    
+    double m, s, d;
+    if (len > 200) {
+      m = (table_m[200] + table_m[201] + table_m[202] + table_m[203])/4.;
+      s = (table_s[200] + table_s[201] + table_s[202] + table_s[203])/4.;
+      d = (table_d[200] + table_d[201] + table_d[202] + table_d[203])/4.;
+    } else {
+      m = table_m[len];
+      s = table_s[len]; 
+      d = table_d[len];
+    }  
+    double y = CDF_FS(ident, m, s, d);
+    return y;
   }
-  double x = (double)i/(double)(m_data.isize() - 1);
-  double y = CDF(x, m, s, d);
+  
 };
 
 #endif //SCORING_H

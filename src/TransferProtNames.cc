@@ -50,7 +50,7 @@ int main( int argc, char** argv )
     if (parser.AsString(0) != "Summary")
       continue;
     int off = 0;
-    if (parser.GetItemCount() == 6)
+    if (parser.AsString(2) == "vs.")
       off = 1;
     const string & seq = parser.AsString(1);
     string frame = "frame:(n/a)";
