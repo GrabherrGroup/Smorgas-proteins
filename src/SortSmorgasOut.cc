@@ -33,16 +33,19 @@ int main( int argc, char** argv )
 {
 
   commandArg<string> fileCmmd("-i","input file");
-  commandArg<int> cCmmd("-c","cutoff");
+  commandArg<int> cCmmd("-c","# of alignments");
+  commandArg<double> fCmmd("-f","f-value cutoff", 0.1);
   commandLineParser P(argc,argv);
-  P.SetDescription("Testing the file parser.");
+  P.SetDescription("Sort Smorgas output.");
   P.registerArg(fileCmmd);
   P.registerArg(cCmmd);
+  P.registerArg(fCmmd);
   
   P.parse();
   
   string fileName = P.GetStringValueFor(fileCmmd);
   int cutoff = P.GetIntValueFor(cCmmd);
+  double thresh = P.GetDoubleValueFor(fCmmd);
   
 
   //comment. ???
@@ -59,7 +62,7 @@ int main( int argc, char** argv )
 
     const string & name = parser.AsString(1);
     double score = parser.AsFloat(13);
-    if (score > 0.1)
+    if (score > thresh)
       continue;
 
     Align a;
