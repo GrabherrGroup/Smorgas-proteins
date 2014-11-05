@@ -1,115 +1,90 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <meta content="text/html; charset=ISO-8859-1"
+    <meta content="text/html; charset=windows-1252"
       http-equiv="Content-Type">
     <title>Frequently asked questions</title>
   </head>
   <body>
-
-    <form method="POST" action="/"> 
-      <input type="submit" value="Back to main page"/>
-    </form><br>
-
+    <form method="POST" action="/"> <input value="Back to main page"
+        type="submit"> </form>
+    <br>
     <meta name="Title" content="">
     <p class="MsoNormal"><big><b><span style="font-family:&quot;Times
-            New Roman&quot;">Questions and
-            Answers<o:p></o:p></span></b></big></p>
+            New Roman&quot;">Questions and Answers<o:p></o:p></span></b></big></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: Why do we
-        need another online alignment web site? Isn&#8217;t <a
-          href="http://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI&#8217;s blast</a>
-        service sufficient?<o:p></o:p></span></p>
+        Roman&quot;">Q: Why do we need another online alignment web
+        site? Isn’t <a href="http://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI’s
+          blast</a> service sufficient?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A: It is all
-        about time and responsiveness. Usability studies have shown that
-        waiting for a
-        few seconds for results is perfectly acceptable, as is waiting
-        half an hour or
+        Roman&quot;">A: It is all about time and responsiveness.
+        Usability studies have shown that waiting for a few seconds for
+        results is perfectly acceptable, as is waiting half an hour or
         more for long batch processing jobs. In between, though, resides
-        an
-        &#8220;unfavorable valley&#8221;, meaning that a few minutes of response
-        time are too long
-        to stare at the screen, yet it is not enough time to get a
-        coffee and a sandwich.
-        Unfortunately, NCBI&#8217;s blastp and blastx hit this unfavorable
-        valley spot on.
-        Our original solution was to make protein searches really slow,
-        hence the name
-        &#8220;sm</span><span style="font-family:&quot;Times New
-        Roman&quot;;mso-ansi-language:
-        SV" lang="SV">&ouml;rg&aring;s&#8221;,</span><span
+        an “unfavorable valley”, meaning that a few minutes of response
+        time are too long to stare at the screen, yet it is not enough
+        time to get a coffee and a sandwich. Unfortunately, NCBI’s
+        blastp and blastx hit this unfavorable valley spot on. Our
+        original solution was to make protein searches really slow,
+        hence the name “sm</span><span style="font-family:&quot;Times
+        New Roman&quot;;mso-ansi-language: SV" lang="SV">örgås”,</span><span
         style="font-family:&quot;Times New Roman&quot;"> which can
-        loosely be translated from Swedish as &#8220;sandwich&#8221;. However, our
-        engineers found
-        that too difficult a task, so we made it really fast. In short:
-        we wanted to
-        present <i style="mso-bidi-font-style:normal">blast</i>-quality
-        results at the
-        response time of the much faster <i
+        loosely be translated from Swedish as “sandwich”. However, our
+        engineers found that too difficult a task, so we made it really
+        fast. In short: we wanted to present <i
+          style="mso-bidi-font-style:normal">blast</i>-quality results
+        at the response time of the much faster <i
           style="mso-bidi-font-style:normal">blat</i>.<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: Why don&#8217;t you
-        use <i style="mso-bidi-font-style:normal">blat</i> then? <o:p></o:p></span></p>
+        Roman&quot;">Q: Why don’t you use <i
+          style="mso-bidi-font-style:normal">blat</i> then? <o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A: Because on a
-        large protein database such as <i
+        Roman&quot;">A: Because on a large protein database such as <i
           style="mso-bidi-font-style:normal">nr</i>, sm</span><span
         style="font-family:&quot;Times New
-        Roman&quot;;mso-ansi-language:SV" lang="SV">&ouml;rg&aring;s is
-        even faster than blat.</span><span
-        style="font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+        Roman&quot;;mso-ansi-language:SV" lang="SV">örgås is even faster
+        than blat.</span><span style="font-family:&quot;Times New
+        Roman&quot;"><o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: I don&#8217;t see
-        an e-value. How do you know how good an alignment is?<o:p></o:p></span></p>
+        Roman&quot;">Q: I don’t see an e-value. How do you know how good
+        an alignment is?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A: We provide an
-        equivalent, but call it, more traditionally, p-value. Please
-        note that the
-        statistical model used to compute these values do not reflect
-        the molecular
+        Roman&quot;">A: We provide an equivalent, but call it f-value. 
+	Please note that the statistical model
+        used to compute these values do not necessarily accurately reflect the molecular
         reality, and neither the sampling bias of the protein database
-        (the same is
-        true for blast&#8217;s e-value), so please use with caution when you
-        are at the lower
-        end of the confidence.<o:p></o:p></span></p>
+        (the same is true for blast’s e-value), so please use with
+        caution when you are at the lower end of the confidence.<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: Why are the
-        alignments in graphical form upside down?<o:p></o:p></span></p>
+        Roman&quot;">Q: Why are the alignments in graphical form upside
+        down?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A: They are not,
-        that is the way we like to look at them, this is how we designed
-        it. On a more
-        technical note, it is easier to count up in an image, rather
-        than counting
-        down. Once we figure out how to do the latter correctly, we will
-        reverse the
-        order.<o:p></o:p></span></p>
+        Roman&quot;">A: They are not, that is the way we like to look at
+        them, this is how we designed it. On a more technical note, it
+        is easier to count up in an image, rather than counting down.
+        Once we figure out how to do the latter correctly, we will
+        reverse the order.<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: How do I cite
-        this aligner?<o:p></o:p></span></p>
+        Roman&quot;">Q: How do I cite this aligner?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A: We are
-        working on a proper publication, please be patient. If you are
-        one of the
-        reviewers, please send back your report within the two weeks
-        that the journal
-        has given you.<o:p></o:p></span></p>
+        Roman&quot;">A: We are working on a proper publication, please
+        be patient. If you are one of the reviewers, please send back
+        your report within the two weeks that the journal has given you.<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: Did any real
-        users actually ask any of the questions above?<o:p></o:p></span></p>
+        Roman&quot;">Q: Did any real users actually ask any of the
+        questions above?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;">A: No.<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
@@ -117,58 +92,57 @@
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><big><b><span style="font-family:&quot;Times
-            New Roman&quot;">Questions that
-            users really asked.<o:p></o:p></span></b></big></p>
+            New Roman&quot;">Questions that users really asked.<o:p></o:p></span></b></big></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: Will there be
-        free food?<o:p></o:p></span></p>
+        Roman&quot;">Q: Will there be free food?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A: Currently,
-        no. We recommend that you attend a local meeting at your
-        institution instead.<o:p></o:p></span></p>
+        Roman&quot;">A: Currently, no. We recommend that you attend a
+        local meeting at your institution instead.<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: Hey, what&#8217;s
-        up with the funny characters in your aligner&#8217;s name? I mean, how
-        do I even get
-        them on my keyboard? Are you kidding me here?<o:p></o:p></span></p>
+        Roman&quot;">Q: Hey, what’s up with the funny characters in your
+        aligner’s name? I mean, how do I even get them on my keyboard?
+        Are you kidding me here?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A: Dude, just
-        copy and paste the word &#8220;sm</span><span
+        Roman&quot;">A: Dude, just copy and paste the word “sm</span><span
         style="font-family:&quot;Times New Roman&quot;;
-        mso-ansi-language:SV" lang="SV">&ouml;rg&aring;s&#8221;</span><span
-        style="font-family:&quot;Times New Roman&quot;">
-        from our web site.<o:p></o:p></span></p>
+        mso-ansi-language:SV" lang="SV">örgås”</span><span
+        style="font-family:&quot;Times New Roman&quot;"> from our web
+        site.<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: How many of
-        you guys does it take to change a light bulb?<o:p></o:p></span></p>
+        Roman&quot;">Q: How many smörgås developers does it take to
+        change a light bulb?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A: Please send a
-        light bulb change request to <a href="http://www.uppmax.uu.se">UPPMAX/UPPNEX</a>,
-        or ask a <a href="http://www.bils.se">BILS</a> application
-        expert with
-        experience in the area of &#8220;massively parallel light bulbs&#8221; for
-        help.<o:p></o:p></span></p>
+        Roman&quot;">A: You'll have to do that yourself, but we will
+        provide beautifully colored suggestions for replacement parts
+        based on similarity to the original.<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+        Roman&quot;"><o:p><br>
+        </o:p></span><span style="font-family:&quot;Times New
+        Roman&quot;"><o:p>
+          <p class="MsoNormal"><span style="font-family:&quot;Times New
+              Roman&quot;">Q: How many NCBI blastp developers does it
+              take to change a light bulb?<o:p></o:p></span></p>
+          <p class="MsoNormal"><span style="font-family:&quot;Times New
+              Roman&quot;">A: This page will refresh in 17 second(s)...
+              29 second(s)... 53 second(s)...<o:p></o:p></span></p>
+          <span style="font-family:&quot;Times New Roman&quot;"><o:p></o:p></span>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: Will there be
-        free food?<o:p></o:p></span></p>
+        Roman&quot;">Q: Will there be free food?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A:
-        &lt;facepalm&gt;<o:p></o:p></span></p>
+        Roman&quot;">A: &lt;facepalm&gt;<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <meta name="Keywords" content="">
     <meta http-equiv="Content-Type" content="text/html;
-      charset=ISO-8859-1">
+      charset=windows-1252">
     <meta name="ProgId" content="Word.Document">
     <meta name="Generator" content="Microsoft Word 14">
     <meta name="Originator" content="Microsoft Word 14">
