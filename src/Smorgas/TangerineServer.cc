@@ -108,7 +108,7 @@ public:
       m_tax.Add("Deuterostomia;");
       m_tax.Add("Chordata;");
       m_tax.Add("Actinopterygii;");
-      m_tax.Add("Sarcopterygii;");
+      // m_tax.Add("Sarcopterygii;");
       m_tax.Add("Protostomia;");
       m_tax.Add("Nematoda;");
       m_tax.Add("Arthropoda;");
@@ -118,6 +118,11 @@ public:
       m_tax.Add("Magnoliophyta;");
       m_tax.Add("Cyanobacteria;");
       m_tax.Add("Proteobacteria;");
+
+      m_tax.Add("Amphibia;");
+      m_tax.Add("Mammalia;");
+      m_tax.Add("Lepidosauria;");
+      m_tax.Add("Archosauria;");
 
       // Old colors
       /*     m_tax.Add("Metazoa;");
