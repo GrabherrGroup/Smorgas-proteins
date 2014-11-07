@@ -98,7 +98,29 @@ public:
   void ReadTaxaColors(const string & file) {
     
     if (file == "") {
+      m_tax.Add("Archaea;");
+      m_tax.Add("Bacteria;");
+      m_tax.Add("Eukaryota;");
+      m_tax.Add("Fungi;");
+      m_tax.Add("Ascomycota;");
+      m_tax.Add("Basidiomycota;");
       m_tax.Add("Metazoa;");
+      m_tax.Add("Deuterostomia;");
+      m_tax.Add("Chordata;");
+      m_tax.Add("Actinopterygii;");
+      m_tax.Add("Sarcopterygii;");
+      m_tax.Add("Protostomia;");
+      m_tax.Add("Nematoda;");
+      m_tax.Add("Arthropoda;");
+      m_tax.Add("Viridiplantae;");
+      m_tax.Add("Embryophyta;");
+      m_tax.Add("Coniferophyta;");
+      m_tax.Add("Magnoliophyta;");
+      m_tax.Add("Cyanobacteria;");
+      m_tax.Add("Proteobacteria;");
+
+      // Old colors
+      /*     m_tax.Add("Metazoa;");
       m_tax.Add("Eukaryota;");
       m_tax.Add("Teleostei;");
       m_tax.Add("Archosauria;");
@@ -115,7 +137,7 @@ public:
       m_tax.Add("Embryophyta;");
       m_tax.Add("Actinobacteria;");
       m_tax.Add("Ascomycota;");
-      m_tax.Add("Basidiomycota;");
+      m_tax.Add("Basidiomycota;");*/
       return;
     }
 

@@ -97,14 +97,14 @@ void SatsumaProt::alignAll(ostream & o) {
   int i = -1;
   int total_count = 0;
   while (queryStream.GetNext(d, name)) {
-    cout << "Processed " << total_count << endl;
+    //cout << "Processed " << total_count << endl;
     total_count++;
     if (!HasORF(d)) {
-      cout << "Skipped." << endl;
+      //cout << "Skipped." << endl;
       FILE_LOG(logDEBUG1) << endl << "DO NOT Start XC alignments, no frame. " <<  GetTimeStatic(params.bQuiet);
       continue;
     }
-    cout << "Good" << endl;
+    //cout << "Good" << endl;
     i++;
     if (!params.bExhaust) {
       switch(params.prefilterType) {
