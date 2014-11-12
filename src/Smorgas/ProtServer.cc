@@ -56,7 +56,7 @@ int main( int argc, char** argv )
   //commandArg<string> bStringCmmd("-q","query protein fasta");
   commandArg<int>    portCmmd("-port","port to listen to");
   commandArg<string> serverCmmd("-server","server name");
-  commandArg<int>    kCmmd("-k","k-mer size", 5);
+  commandArg<int>    kCmmd("-k","k-mer size", 6);
   commandArg<int>    kStepCmmd("-kmerStep","Step size to be used in generating filteration kmers", 1);
   commandArg<int>    filterCmmd("-filter","Type of prefilter of hits to use- 1:fixed distance k-mer based 2:max k-mer based", 1);
   commandArg<int>    failCntCmmd("-allowFails","Number of failures to allow before stopping the search", 50);
