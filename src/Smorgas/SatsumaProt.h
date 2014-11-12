@@ -11,6 +11,7 @@
 #include "src/MultiProtein.h"
 #include "src/MultXCorr.h"
 #include "src/SequenceStream.h"
+#include "src/ReducedAA.h"
 
 class ProteinXCorr : public MultiSizeXCorr
 {
@@ -140,6 +141,7 @@ private:
   svec<int> hit_diff;
   svec<int> contrib;
   svec<int> filter1Passed;
+  ReducedAA m_rr;
   SatsumaProtParams params;
 };
 #endif //_SATSUMA_PROT_H_

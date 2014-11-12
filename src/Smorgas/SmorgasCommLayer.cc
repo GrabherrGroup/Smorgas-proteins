@@ -36,6 +36,7 @@ public:
     if (m_pOut != NULL)
       fprintf(m_pOut, "%s", result.c_str());
     m_counter++;
+    fflush(m_pOut);
     m_mutex.Unlock();
   }
 

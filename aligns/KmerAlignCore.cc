@@ -12,7 +12,7 @@ KmerAlignCore<DataType>::KmerAlignCore()
   m_pTrans = NULL;
   m_lookAhead = 0;
   m_lookAheadMaxFreq = 50000;
-
+  m_bUseReduced = true;
   m_max12 = 0x7FFFFFFF;
 }
 
@@ -39,7 +39,10 @@ void KmerAlignCore<DataType>::AddData(const vecDNAVector & bases,
 
   cout << "Counting k-mers..." << endl;
   for (j=0; j<(int)bases.size(); j++) {
-    const DNAVector & b = bases[j];
+    DNAVector b = bases[j];
+    if (m_bUseReduced)
+      m_rr.Reduce(b);
+
     const NumVector & t = tags[j];
 
     if (j % 10000 == 0)
@@ -63,7 +66,10 @@ void KmerAlignCore<DataType>::AddData(const vecDNAVector & bases,
 
   cout << "done, assigning k-mers..." << endl;
   for (j=0; j<(int)bases.size(); j++) {
-    const DNAVector & b = bases[j];
+    DNAVector b = bases[j];
+    
+    if (m_bUseReduced)
+      m_rr.Reduce(b);
     const NumVector & t = tags[j];
 
     if (j % 10000 == 0)
@@ -112,10 +118,14 @@ void KmerAlignCore<DataType>::SortAll()
 }
 
 template<class DataType>
-const svec<DataType>& KmerAlignCore<DataType>::GetMatchesDirectly(const DNAVector & b, int start)
+const svec<DataType>& KmerAlignCore<DataType>::GetMatchesDirectly(const DNAVector & raw, int start)
 {
   int size = m_pTrans->GetSize();
   int i, j;
+
+  DNAVector b = raw;
+  if (m_bUseReduced)
+    m_rr.Reduce(b);
 
   int n = m_pTrans->BasesToNumber(b, start);
 
@@ -130,11 +140,15 @@ const svec<DataType>& KmerAlignCore<DataType>::GetMatchesDirectly(const DNAVecto
 
 
 template<class DataType>
-bool KmerAlignCore<DataType>::GetMatches(svec<DataType>& matches, const DNAVector & b, int start)
+bool KmerAlignCore<DataType>::GetMatches(svec<DataType>& matches, const DNAVector & raw, int start)
 {
   int size = m_pTrans->GetSize();
   int i, j, k, l;
   k = start;
+
+  DNAVector b = raw;
+  if (m_bUseReduced)
+    m_rr.Reduce(b);
 
   if (start + m_numTables * size > (int)b.size()) {
     cout << "Error: sequence length=" << b.size() << " and k-kmer end is " << start + m_numTables * size << endl; 

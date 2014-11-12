@@ -26,7 +26,7 @@ int main( int argc, char** argv )
   commandArg<bool>   rnaCmmd("-rna","Do RNA alignments", false);
   commandArg<bool>   timeCmmd("-timestamps","Print time stamps", false);
   commandArg<double> cutoffCmmd("-cutoff","show only alignments at this (ingapped) identity or higher", 0.);
-  commandArg<int>    kmerWindowSlideCmmd("-wSlide","Filter Window slide, if set to 1 the window sliding will cover all kmers.", 2);
+  commandArg<int>    kmerWindowSlideCmmd("-wSlide","Filter Window slide, if set to 1 the window sliding will cover all kmers.", 1);
   commandArg<double> eThreshCmmd("-f-value","show only alignments with better f-value", 0.1);
   commandArg<string> appLogCmmd("-l", "Application logging file","application.log");
 

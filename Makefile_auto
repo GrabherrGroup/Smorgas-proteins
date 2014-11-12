@@ -2,7 +2,7 @@
 ### This file is generated automatically.  DO NOT MODIFY BY HAND!
 ###
 
-aligns/KmerAlignCore.o: $(SRC)/aligns/KmerAlignCore.cc $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/src/DNAVector.h 
+aligns/KmerAlignCore.o: $(SRC)/aligns/KmerAlignCore.cc $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(SRC)/src/DNAVector.h $(SRC)/src/ReducedAA.h 
 base/ErrorHandling.o: $(SRC)/base/ErrorHandling.cc $(SRC)/base/ErrorHandling.h 
 base/FileParser.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.cc $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/util/mutil.h 
 base/StreamParser.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StreamParser.cc $(SRC)/base/StreamParser.h $(SRC)/util/mutil.h 
@@ -31,15 +31,16 @@ src/Satsuma/XCorrDynProg.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/SVector.h $(
 src/SequenceMatch.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/src/SequenceMatch.cc $(SRC)/src/SequenceMatch.h $(SRC)/util/mutil.h 
 src/SequenceStream.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.h $(SRC)/src/SequenceStream.cc $(SRC)/src/SequenceStream.h $(SRC)/util/mutil.h 
 src/Smorgas/ProtNameCluster.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StreamParser.h $(SRC)/src/Alignment.h $(SRC)/src/Cola/AlignerParams.h $(SRC)/src/Cola/AlignmentCola.h $(SRC)/src/Cola/Cola.h $(SRC)/src/Cola/EditGraph.h $(SRC)/src/DNAVector.h $(SRC)/src/Smorgas/ProtNameCluster.cc $(SRC)/src/Smorgas/ProtNameCluster.h $(SRC)/util/mutil.h 
-src/Smorgas/ProtServer.o: $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StreamParser.h $(SRC)/base/StringUtil.h $(SRC)/base/ThreadHandler.h $(SRC)/extern/RealFFT/DynArray.h $(SRC)/extern/RealFFT/DynArray.hpp $(SRC)/extern/RealFFT/FFTReal.h $(SRC)/extern/RealFFT/FFTReal.hpp $(SRC)/extern/RealFFT/OscSinCos.h $(SRC)/extern/RealFFT/OscSinCos.hpp $(SRC)/extern/RealFFT/def.h $(SRC)/extern/logger/log.h $(SRC)/src/Alignment.h $(SRC)/src/CrossCorr.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.h $(SRC)/src/MultXCorr.h $(SRC)/src/MultiProtein.h $(SRC)/src/Satsuma/XCorrDynProg.h $(SRC)/src/SequenceMatch.h $(SRC)/src/SequenceStream.h $(SRC)/src/Smorgas/ProtServer.cc $(SRC)/src/Smorgas/SatsumaProt.h $(SRC)/util/SComm.h $(SRC)/util/SyncConn.h $(SRC)/util/SysTime.h $(SRC)/util/mutil.h 
-src/Smorgas/SatsumaProt.o: $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/extern/RealFFT/DynArray.h $(SRC)/extern/RealFFT/DynArray.hpp $(SRC)/extern/RealFFT/FFTReal.h $(SRC)/extern/RealFFT/FFTReal.hpp $(SRC)/extern/RealFFT/OscSinCos.h $(SRC)/extern/RealFFT/OscSinCos.hpp $(SRC)/extern/RealFFT/def.h $(SRC)/extern/logger/log.h $(SRC)/src/Alignment.h $(SRC)/src/CrossCorr.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.h $(SRC)/src/MultXCorr.h $(SRC)/src/MultiProtein.h $(SRC)/src/Satsuma/XCorrDynProg.h $(SRC)/src/SequenceMatch.h $(SRC)/src/SequenceStream.h $(SRC)/src/Smorgas/SatsumaProt.cc $(SRC)/src/Smorgas/SatsumaProt.h $(SRC)/util/SysTime.h $(SRC)/util/mutil.h 
+src/Smorgas/ProtServer.o: $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StreamParser.h $(SRC)/base/StringUtil.h $(SRC)/base/ThreadHandler.h $(SRC)/extern/RealFFT/DynArray.h $(SRC)/extern/RealFFT/DynArray.hpp $(SRC)/extern/RealFFT/FFTReal.h $(SRC)/extern/RealFFT/FFTReal.hpp $(SRC)/extern/RealFFT/OscSinCos.h $(SRC)/extern/RealFFT/OscSinCos.hpp $(SRC)/extern/RealFFT/def.h $(SRC)/extern/logger/log.h $(SRC)/src/Alignment.h $(SRC)/src/CrossCorr.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.h $(SRC)/src/MultXCorr.h $(SRC)/src/MultiProtein.h $(SRC)/src/ReducedAA.h $(SRC)/src/Satsuma/XCorrDynProg.h $(SRC)/src/SequenceMatch.h $(SRC)/src/SequenceStream.h $(SRC)/src/Smorgas/ProtServer.cc $(SRC)/src/Smorgas/SatsumaProt.h $(SRC)/util/SComm.h $(SRC)/util/SyncConn.h $(SRC)/util/SysTime.h $(SRC)/util/mutil.h 
+src/Smorgas/SatsumaProt.o: $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/extern/RealFFT/DynArray.h $(SRC)/extern/RealFFT/DynArray.hpp $(SRC)/extern/RealFFT/FFTReal.h $(SRC)/extern/RealFFT/FFTReal.hpp $(SRC)/extern/RealFFT/OscSinCos.h $(SRC)/extern/RealFFT/OscSinCos.hpp $(SRC)/extern/RealFFT/def.h $(SRC)/extern/logger/log.h $(SRC)/src/Alignment.h $(SRC)/src/CrossCorr.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.h $(SRC)/src/MultXCorr.h $(SRC)/src/MultiProtein.h $(SRC)/src/ReducedAA.h $(SRC)/src/Satsuma/XCorrDynProg.h $(SRC)/src/SequenceMatch.h $(SRC)/src/SequenceStream.h $(SRC)/src/Smorgas/SatsumaProt.cc $(SRC)/src/Smorgas/SatsumaProt.h $(SRC)/util/SysTime.h $(SRC)/util/mutil.h 
 src/Smorgas/SmorgasCommLayer.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/base/ThreadHandler.h $(SRC)/extern/logger/log.h $(SRC)/src/Smorgas/SmorgasCommLayer.cc $(SRC)/util/FindProcess.h $(SRC)/util/SComm.h $(SRC)/util/SyncConn.h $(SRC)/util/mutil.h 
 src/Smorgas/SortProtOutput.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/logger/log.h $(SRC)/src/Smorgas/SortProtOutput.cc $(SRC)/util/mutil.h 
 src/Smorgas/TangerineServer.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/base/WebServer.h $(SRC)/extern/logger/log.h $(SRC)/extern/mongoose/mongoose.h $(SRC)/src/Smorgas/TangerineServer.cc $(SRC)/util/SComm.h $(SRC)/util/SyncConn.h $(SRC)/util/mutil.h $(SRC)/visual/Color.h $(SRC)/visual/VisualAlignments.h 
-src/Smorgas/runSatsumaProt.o: $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/RealFFT/DynArray.h $(SRC)/extern/RealFFT/DynArray.hpp $(SRC)/extern/RealFFT/FFTReal.h $(SRC)/extern/RealFFT/FFTReal.hpp $(SRC)/extern/RealFFT/OscSinCos.h $(SRC)/extern/RealFFT/OscSinCos.hpp $(SRC)/extern/RealFFT/def.h $(SRC)/extern/logger/log.h $(SRC)/src/Alignment.h $(SRC)/src/CrossCorr.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.h $(SRC)/src/MultXCorr.h $(SRC)/src/MultiProtein.h $(SRC)/src/Satsuma/XCorrDynProg.h $(SRC)/src/SequenceMatch.h $(SRC)/src/SequenceStream.h $(SRC)/src/Smorgas/SatsumaProt.h $(SRC)/src/Smorgas/runSatsumaProt.cc $(SRC)/util/SysTime.h $(SRC)/util/mutil.h 
+src/Smorgas/runSatsumaProt.o: $(SRC)/aligns/KmerAlignCore.h $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/RealFFT/DynArray.h $(SRC)/extern/RealFFT/DynArray.hpp $(SRC)/extern/RealFFT/FFTReal.h $(SRC)/extern/RealFFT/FFTReal.hpp $(SRC)/extern/RealFFT/OscSinCos.h $(SRC)/extern/RealFFT/OscSinCos.hpp $(SRC)/extern/RealFFT/def.h $(SRC)/extern/logger/log.h $(SRC)/src/Alignment.h $(SRC)/src/CrossCorr.h $(SRC)/src/DNAVector.h $(SRC)/src/MakeSixFrames.h $(SRC)/src/MultXCorr.h $(SRC)/src/MultiProtein.h $(SRC)/src/ReducedAA.h $(SRC)/src/Satsuma/XCorrDynProg.h $(SRC)/src/SequenceMatch.h $(SRC)/src/SequenceStream.h $(SRC)/src/Smorgas/SatsumaProt.h $(SRC)/src/Smorgas/runSatsumaProt.cc $(SRC)/util/SysTime.h $(SRC)/util/mutil.h 
 src/SortSmorgasOut.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/logger/log.h $(SRC)/src/SortSmorgasOut.cc $(SRC)/util/mutil.h 
 src/SplitFasta.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/logger/log.h $(SRC)/src/DNAVector.h $(SRC)/src/SplitFasta.cc $(SRC)/util/mutil.h 
 src/TestFPTable.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/logger/log.h $(SRC)/src/DNAVector.h $(SRC)/src/FPTable.h $(SRC)/src/FScoreTable.h $(SRC)/src/Smorgas/Scoring.h $(SRC)/src/TestFPTable.cc $(SRC)/util/mutil.h 
+src/TestReduced.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/logger/log.h $(SRC)/src/DNAVector.h $(SRC)/src/ReducedAA.h $(SRC)/src/TestReduced.cc $(SRC)/util/mutil.h 
 src/TrainFalsePositiveTable.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/logger/log.h $(SRC)/src/DNAVector.h $(SRC)/src/FPTable.h $(SRC)/src/TrainFalsePositiveTable.cc $(SRC)/util/mutil.h 
 src/TransferProtNames.o: $(SRC)/base/CommandLineParser.h $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/base/StringUtil.h $(SRC)/extern/logger/log.h $(SRC)/src/DNAVector.h $(SRC)/src/TransferProtNames.cc $(SRC)/util/mutil.h 
 util/FindProcess.o: $(SRC)/base/ErrorHandling.h $(SRC)/base/FileParser.h $(SRC)/base/SVector.h $(SRC)/util/FindProcess.cc $(SRC)/util/FindProcess.h $(SRC)/util/mutil.h 
@@ -120,6 +121,13 @@ TestFPTable:  base/ErrorHandling.o base/FileParser.o base/StringUtil.o src/Align
 	$(BIN)/checkLock $(BIN)/$@
 	$(CPLUSPLUS) $(LINK_OPTIONS) -o $(BIN)/$@  $(OBJ)/src/TestFPTable.o -L. $(LINK_LIBS) -l_TestFPTable_temp
 	/bin/rm lib_TestFPTable_temp.a
+TestReduced:  checkLock
+TestReduced:  base/ErrorHandling.o base/FileParser.o base/StringUtil.o src/AlignmentBlock.o src/Coordinate.o src/DNAVector.o src/TestReduced.o util/mutil.o
+	/bin/rm -f lib_TestReduced_temp.a
+	ar -qc lib_TestReduced_temp.a $(OBJ)/base/ErrorHandling.o $(OBJ)/base/FileParser.o $(OBJ)/base/StringUtil.o $(OBJ)/src/AlignmentBlock.o $(OBJ)/src/Coordinate.o $(OBJ)/src/DNAVector.o $(OBJ)/src/TestReduced.o $(OBJ)/util/mutil.o
+	$(BIN)/checkLock $(BIN)/$@
+	$(CPLUSPLUS) $(LINK_OPTIONS) -o $(BIN)/$@  $(OBJ)/src/TestReduced.o -L. $(LINK_LIBS) -l_TestReduced_temp
+	/bin/rm lib_TestReduced_temp.a
 TrainFalsePositiveTable:  checkLock
 TrainFalsePositiveTable:  base/ErrorHandling.o base/FileParser.o base/StringUtil.o src/AlignmentBlock.o src/Coordinate.o src/DNAVector.o src/FPTable.o src/TrainFalsePositiveTable.o util/mutil.o
 	/bin/rm -f lib_TrainFalsePositiveTable_temp.a
@@ -183,6 +191,7 @@ OBJECTS = \
   src/SortSmorgasOut.o\
   src/SplitFasta.o\
   src/TestFPTable.o\
+  src/TestReduced.o\
   src/TrainFalsePositiveTable.o\
   src/TransferProtNames.o\
   util/FindProcess.o\
@@ -207,6 +216,7 @@ EXECUTABLES = \
   SplitFasta\
   TangerineServer\
   TestFPTable\
+  TestReduced\
   TrainFalsePositiveTable\
   TransferProtNames\
   runSatsumaProt\
@@ -221,6 +231,7 @@ src: \
   SortSmorgasOut\
   SplitFasta\
   TestFPTable\
+  TestReduced\
   TrainFalsePositiveTable\
   TransferProtNames\
   src.Smorgas\

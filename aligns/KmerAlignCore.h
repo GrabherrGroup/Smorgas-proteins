@@ -1,11 +1,9 @@
-
-
-
 #ifndef _KMERALIGNCORE_H_
 #define _KMERALIGNCORE_H_
 
 
 #include "src/DNAVector.h"
+#include "src/ReducedAA.h"
 
 
 //==========================================
@@ -314,6 +312,8 @@ private:
   int m_lookAheadMaxFreq;
   KmerAlignCoreRecordStoreTable<DataType> m_table;
   TranslateBasesToNumber* m_pTrans;
+  bool m_bUseReduced;
+  ReducedAA m_rr;
 };
 
 
