@@ -1,9 +1,10 @@
 #ifndef _SATSUMA_PROT_H_
 #define _SATSUMA_PROT_H_
 
-#include "aligns/KmerAlignCore.h"
+#include <stdint.h>
 #include <string>
 
+#include "aligns/KmerAlignCore.h"
 #include "src/CrossCorr.h"
 #include "src/Satsuma/XCorrDynProg.h"
 #include "util/SysTime.h"
@@ -139,8 +140,8 @@ private:
   svec<Hit> allhits;
   svec<int> hit_ref;
   svec<int> hit_diff;
-  svec<int> contrib;
-  svec<int> contribOffset;
+  svec<uint16_t> contrib;
+  svec<uint16_t> contribOffset;
   ReducedAA m_rr;
   SatsumaProtParams params;
 };
