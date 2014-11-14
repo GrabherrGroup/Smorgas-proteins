@@ -13,8 +13,7 @@
 #include <math.h>
 
 
-
-
+AAProperty CCSignalProteinProp::m_prop;
 
 
 void ComplexMult(float & r_o, float & i_o, float r1, float i1, float r2, float i2) 
@@ -293,6 +292,50 @@ void CCSignalProtein::SetSize(int n)
     m_aa[i].resize(GetFullSize(), 0.);
   }
 }
+
+
+void CCSignalProteinProp::SetSequence(const DNAVector & b, int size)
+{
+  int i, j;
+  if (size != m_size) {
+    for (i=0; i<m_size; i++) {
+      m_aa[i].clear();
+      m_aa[i].resize(size, 0.);
+    }
+  }
+  for (i=0; i<b.isize(); i++) {
+    (m_aa[0])[i] = m_prop.Polarity(b[i]);
+    (m_aa[1])[i] = m_prop.Charge(b[i]);
+    (m_aa[2])[i] = m_prop.Hydropathy(b[i]);
+  }
+  for (j=0; j<m_size; j++) {
+    double off = 0.;
+    vecFloat & f = m_aa[j];
+    for (i=0; i<b.isize(); i++) {
+      off += f[i];
+    }
+    off /= (double)b.isize();
+    for (i=0; i<b.isize(); i++) {
+      f[i] -= off;
+    }
+    for (; i<f.isize(); i++)
+      f[i] = 0.;
+  }
+   
+}
+
+  
+void CCSignalProteinProp::SetSize(int n)
+{
+  CCSignal::SetSize(n);
+  for (int i=0; i<m_size; i++) {
+    m_aa[i].clear();
+    m_aa[i].resize(GetFullSize(), 0.);
+  }
+}
+
+
+
 
 //==================================================================
 void CCSignalWithCodons::SetSequence(const DNAVector & b, int size)

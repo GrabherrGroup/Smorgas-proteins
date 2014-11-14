@@ -4,6 +4,7 @@
 //#include "base/SVector.h"
 #include "extern/RealFFT/FFTReal.h"
 #include "src/DNAVector.h"
+#include "src/AAProperty.h"
 
 
 
@@ -112,9 +113,36 @@ class CCSignalProtein : public CCSignal
   }
 
  private:
-  vecFloat m_aa[21];
+  vecFloat m_aa[21];  
 };
+#define NUMPROP 3
 
+class CCSignalProteinProp : public CCSignal
+{
+ public:
+  CCSignalProteinProp() : CCSignal() {
+    m_size = NUMPROP;
+  }
+
+  virtual ~CCSignalProteinProp() {}
+
+  virtual void SetSequence(const DNAVector & b, int size);
+
+  virtual int GetFullSize() const {return m_aa[0].size();}
+  
+  virtual void SetSize(int n);
+
+  virtual int GetCount() const {return m_size;}
+  virtual const svec<float> & Get(int i) const {
+    return m_aa[i];
+  }
+
+ private:
+  
+  static AAProperty m_prop;
+  vecFloat m_aa[NUMPROP];
+  int m_size;
+};
 
 class CCSignalWithCodons : public CCSignal
 {

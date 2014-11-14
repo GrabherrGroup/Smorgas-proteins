@@ -9,7 +9,7 @@ Query offset:                     1
 Target aligned basepairs:         218
 Query aligned basepairs:          218
 Raw Score:                        -1
-Identity score:                   1.00459
+Identity score:                   0.93578
 Total Edit Count                  0
 Mean Contiguity length            0
 Mod-Smith-waterman score:         219
@@ -33,7 +33,7 @@ Sbjct:    161 LMHEMYTSYSEAEKKYSNSQNNVNNLKAFIITKTKDMNYEIIREECRKLVEDINKVLLK 219
 
 
 
-Summary gi|340504143|gb|EGR30619.1|_intraflagellar_transport_protein_,_putative_[Ichthyophthirius_multifiliis] vs. gi|340504143|gb|EGR30619.1|_intraflagellar_transport_protein_,_putative_[Ichthyophthirius_multifiliis] score: 2.16802e-114 q-coords: 1 219 t-coords: 1 219 1.00459 2.16802e-114
+Summary gi|340504143|gb|EGR30619.1|_intraflagellar_transport_protein_,_putative_[Ichthyophthirius_multifiliis] vs. gi|340504143|gb|EGR30619.1|_intraflagellar_transport_protein_,_putative_[Ichthyophthirius_multifiliis] score: 4.46693e-26 q-coords: 1 219 t-coords: 1 219 0.93578 4.46693e-26
 
 
 **********************************************
@@ -44,7 +44,7 @@ Query offset:                     1
 Target aligned basepairs:         218
 Query aligned basepairs:          207
 Raw Score:                        -1
-Identity score:                   0.931193
+Identity score:                   0.876147
 Total Edit Count                  7
 Mean Contiguity length            0
 Mod-Smith-waterman score:         187
@@ -68,7 +68,7 @@ Sbjct:    161 LMHEMYTSYSEAEKKYSNSQNNVNNLKAFIITKTKDMNYEIIREECRKLVEDINKVLLK 219
 
 
 
-Summary gi|340504143|gb|EGR30619.1|_intraflagellar_transport_protein_,_putative_[Ichthyophthirius_multifiliis] vs. gi|340504143|gb|EGR30619.1|_intraflagellar_transport_protein_,_putative_[Ichthyophthirius_multifiliis] score: 1.06242e-87 q-coords: 1 208 t-coords: 1 219 0.931193 1.06242e-87
+Summary gi|340504143|gb|EGR30619.1|_intraflagellar_transport_protein_,_putative_[Ichthyophthirius_multifiliis] vs. gi|340504143|gb|EGR30619.1|_intraflagellar_transport_protein_,_putative_[Ichthyophthirius_multifiliis] score: 4.04785e-24 q-coords: 1 208 t-coords: 1 219 0.876147 4.04785e-24
 
 
 **********************************************
@@ -79,7 +79,7 @@ Query offset:                     1
 Target aligned basepairs:         339
 Query aligned basepairs:          337
 Raw Score:                        -1
-Identity score:                   0.967552
+Identity score:                   0.920354
 Total Edit Count                  12
 Mean Contiguity length            0
 Mod-Smith-waterman score:         314
@@ -115,7 +115,7 @@ Sbjct:    321 NIDNYEKKNKRVELRIIFQH 340
 
 
 
-Summary gi|340504144|gb|EGR30620.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] vs. gi|340504144|gb|EGR30620.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] score: 7.69629e-158 q-coords: 1 338 t-coords: 1 340 0.967552 7.69629e-158
+Summary gi|340504144|gb|EGR30620.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] vs. gi|340504144|gb|EGR30620.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] score: 1.32167e-25 q-coords: 1 338 t-coords: 1 340 0.920354 1.32167e-25
 
 
 **********************************************
@@ -126,7 +126,7 @@ Query offset:                     1
 Target aligned basepairs:         339
 Query aligned basepairs:          337
 Raw Score:                        -1
-Identity score:                   0.967552
+Identity score:                   0.917404
 Total Edit Count                  13
 Mean Contiguity length            0
 Mod-Smith-waterman score:         312
@@ -162,7 +162,7 @@ Sbjct:    321 NIDNYEKKNKRVELRIIFQH 340
 
 
 
-Summary gi|340504144|gb|EGR30620.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] vs. gi|340504144|gb|EGR30620.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] score: 7.69629e-158 q-coords: 1 338 t-coords: 1 340 0.967552 7.69629e-158
+Summary gi|340504144|gb|EGR30620.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] vs. gi|340504144|gb|EGR30620.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] score: 1.63692e-25 q-coords: 1 338 t-coords: 1 340 0.917404 1.63692e-25
 
 
 **********************************************
@@ -173,7 +173,7 @@ Query offset:                     1
 Target aligned basepairs:         531
 Query aligned basepairs:          531
 Raw Score:                        -1
-Identity score:                   1.00188
+Identity score:                   0.917137
 Total Edit Count                  0
 Mean Contiguity length            0
 Mod-Smith-waterman score:         532
@@ -221,7 +221,7 @@ Sbjct:    481 AYQKKRLKRINQKFERIKRQIIKKEVNRQVAKNESKGGNGQEYGQNMNRLVL 532
 
 
 
-Summary gi|340506820|gb|EGR32885.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] vs. gi|340506820|gb|EGR32885.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] score: 3.6127e-273 q-coords: 1 532 t-coords: 1 532 1.00188 3.6127e-273
+Summary gi|340506820|gb|EGR32885.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] vs. gi|340506820|gb|EGR32885.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] score: 1.66905e-25 q-coords: 1 532 t-coords: 1 532 0.917137 1.66905e-25
 
 
 **********************************************
@@ -232,7 +232,7 @@ Query offset:                     265
 Target aligned basepairs:         24
 Query aligned basepairs:          25
 Raw Score:                        -1
-Identity score:                   1
+Identity score:                   0.8
 Total Edit Count                  1
 Mean Contiguity length            0
 Mod-Smith-waterman score:         24
@@ -244,36 +244,7 @@ Sbjct:      1 QQRLMDAKKSL-ASNTAEQMLQNMRN 25
 
 
 
-Summary Simple_sequence_yes vs. gi|340506820|gb|EGR32885.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] score: 3.62355e-14 q-coords: 265 290 t-coords: 1 25 1 3.62355e-14
-
-
-**********************************************
-Target sequence size:             103
-Query sequence size:              634
-Target offset:                    26
-Query offset:                     268
-Target aligned basepairs:         76
-Query aligned basepairs:          78
-Raw Score:                        -1
-Identity score:                   0.961538
-Total Edit Count                  3
-Mean Contiguity length            0
-Mod-Smith-waterman score:         70
-Significance P-value:             6.57696e-13
-***********************************************
-Query:    268 SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSKPKD-NGKPKDNG 346
-              SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS   D  GKPKDNG
-Sbjct:     26 SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS--SDD-GKPKDNG 102
-
-
-
-Query:    347  346
-              
-Sbjct:    103  102
-
-
-
-Summary Simple_sequence_yes vs. gi|340503195|gb|EGR29808.1|_hypothetical_protein_IMG5_148360_[Ichthyophthirius_multifiliis] score: 1.27717e-36 q-coords: 268 346 t-coords: 26 102 0.961538 1.27717e-36
+Summary Simple_sequence_yes vs. gi|340506820|gb|EGR32885.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] score: 1.86056e-06 q-coords: 265 290 t-coords: 1 25 0.8 1.86056e-06
 
 
 **********************************************
@@ -284,7 +255,7 @@ Query offset:                     265
 Target aligned basepairs:         24
 Query aligned basepairs:          25
 Raw Score:                        -1
-Identity score:                   1
+Identity score:                   0.8
 Total Edit Count                  1
 Mean Contiguity length            0
 Mod-Smith-waterman score:         24
@@ -296,6 +267,6 @@ Sbjct:      1 QQRLMDAKKSL-ASNTAEQMLQNMRN 25
 
 
 
-Summary Simple_sequence_no vs. gi|340506820|gb|EGR32885.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] score: 3.62355e-14 q-coords: 265 290 t-coords: 1 25 1 3.62355e-14
+Summary Simple_sequence_no vs. gi|340506820|gb|EGR32885.1|_intraflagellar_transport_protein,_putative_[Ichthyophthirius_multifiliis] score: 1.86056e-06 q-coords: 265 290 t-coords: 1 25 0.8 1.86056e-06
 
 

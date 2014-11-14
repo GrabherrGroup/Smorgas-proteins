@@ -81,7 +81,6 @@ bool HasORF(const DNAVector & d) {
   }
   if (!bOne)
     return true;
-  cout << "Longest: " << max << endl;
   if (max > 60)
     return true;
   return false;
@@ -97,14 +96,11 @@ void SatsumaProt::alignAll(ostream & o) {
   int i = -1;
   int total_count = 0;
   while (queryStream.GetNext(d, name)) {
-    //cout << "Processed " << total_count << endl;
     total_count++;
     if (!HasORF(d)) {
-      //cout << "Skipped." << endl;
       FILE_LOG(logDEBUG1) << endl << "DO NOT Start XC alignments, no frame. " <<  GetTimeStatic(params.bQuiet);
       continue;
     }
-    //cout << "Good" << endl;
     i++;
     if (!params.bExhaust) {
       switch(params.prefilterType) {
@@ -133,13 +129,15 @@ void SatsumaProt::alignAll(ostream & o) {
                             << ", there are " << allhits.isize()-params.limit << " more.";
         break;
       }
+
       DNAVector & t = ref[allhits[x].Contig()];
 
       // Determine the size.
       int size = xc.Size(t.isize(), d.isize());
       svec<float> signal;
 
-      CCSignalProtein target_sig, query_sig;      
+      //CCSignalProtein target_sig, query_sig;      
+      CCSignalProteinProp target_sig, query_sig;      
       target_sig.SetSequence(d, size);
       query_sig.SetSequence(t, size);
       xc.CrossCorrelate(signal, target_sig, query_sig);
@@ -180,8 +178,8 @@ void SatsumaProt::filterTopHits_1(DNAVector d) {
 
   int hitCount = 0;
 
-    svec<int> hitstats;
-    hitstats.resize(ref.isize(), 0);
+  //svec<int> hitstats;
+  // hitstats.resize(ref.isize(), 0);
  
   bool bFull = true;
   FILE_LOG(logDEBUG1) << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
@@ -207,7 +205,7 @@ if (params.bSelf) {
       hit_ref[hitCount] = matches[y].GetContig();
       hit_diff[hitCount] = diff;
       hitCount++;
-      hitstats[matches[y].GetContig()]++;
+      //hitstats[matches[y].GetContig()]++;
       int max = SetQual(ref[matches[y].GetContig()], diff);
       if (max > contrib[matches[y].GetContig()])
         contrib[matches[y].GetContig()] = max;
@@ -216,32 +214,19 @@ if (params.bSelf) {
       }
     }
     FILE_LOG(logDEBUG2) << "Generating stats: ";
-    int min2 = 0;
-    int min3 = 0;
-    int min4 = 0;
-    for (int j=0; j<hitstats.isize(); j++) {
-      if (hitstats[j] >= 2)
-        min2++;
-      if (hitstats[j] >= 3)
-        min3++;
-      if (hitstats[j] >= 4)
-        min4++;
-    }
-    FILE_LOG(logDEBUG2) << "Min2=" << min2 << " Min3=" << min3 << " Min4=" << min4;
     FILE_LOG(logDEBUG2) << "Got k-mers, count. " <<  GetTimeStatic(params.bQuiet);
     for (int j=0; j<contrib.isize(); j++) {
-      //if (contrib[j] >= max(((double)maxContrib)/8.,4) || contrib[j] >= 8) //TODO Parmeterize
-      //if (contrib[j] >= (double)maxContrib)/8. || contrib[j] >= 8) //TODO Parmeterize
       allhits.push_back(Hit(j, contrib[j]));
-       contrib[j] = 0;
+      contrib[j] = 0;
     }
     FILE_LOG(logDEBUG2) << "Reset the quals. Total count=" << hitCount << "  " << GetTimeStatic(params.bQuiet);
     for (int j=0; j<hitCount; j++) {
       ResetOneQual(ref[hit_ref[j]], hit_diff[j]);
     }
     hitCount = 0;
-    FILE_LOG(logDEBUG2) << "Done. " <<  GetTimeStatic(params.bQuiet);
+    FILE_LOG(logDEBUG2) << "Done, sorting... " <<  GetTimeStatic(params.bQuiet);
     Sort(allhits);
+    FILE_LOG(logDEBUG2) << "Done. " <<  GetTimeStatic(params.bQuiet);
 }
 
 void SatsumaProt::filterTopHits_2(DNAVector d) {

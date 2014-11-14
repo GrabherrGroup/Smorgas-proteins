@@ -16,7 +16,7 @@ else
 endif
 
 ifeq ($(DEBUG),yes)
-  SYS_DEBUG	+= -ggdb3
+//  SYS_DEBUG	+= -ggdb3
 endif
 
 ifeq ($(FAST),yes)

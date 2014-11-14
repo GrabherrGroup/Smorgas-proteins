@@ -1,7 +1,11 @@
 Counting k-mers...
 Contigs: 0done, re-sizing arrays...
 done, assigning k-mers...
-Contigs: 0**********************************************
+Contigs: 0Longest: 41
+Longest: 51
+Longest: 32
+Longest: 50
+**********************************************
 Target sequence size:             111
 Query sequence size:              1321
 Target offset:                    1
@@ -9,7 +13,7 @@ Query offset:                     172
 Target aligned basepairs:         109
 Query aligned basepairs:          99
 Raw Score:                        -1
-Identity score:                   0.587156
+Identity score:                   0.541284
 Total Edit Count                  39
 Mean Contiguity length            0
 Mod-Smith-waterman score:         11
@@ -27,9 +31,33 @@ Sbjct:     74 NEGGQQGTDFNRRGNGTTGHARTGSRNFEGNWRNQAQ 110
 
 
 
-Summary Sample09_Contig_000_0454208_000 frame:1- vs. gi|631241534|ref|XP_007915689.1|_putative_cell_wall_biogenesis_protein_phosphatase_protein_[Togninia_minima_UCRPA7] score: 2.2611e-10 q-coords: 172 271 t-coords: 1 110 0.587156 2.2611e-10
+Summary Sample09_Contig_000_0454208_000 frame:2- vs. gi|631241534|ref|XP_007915689.1|_putative_cell_wall_biogenesis_protein_phosphatase_protein_[Togninia_minima_UCRPA7] score: 2.25641e-06 q-coords: 172 271 t-coords: 1 110 0.541284 2.25641e-06
 
 
+Longest: 60
+Longest: 59
+Longest: 23
+Longest: 46
+Longest: 42
+Longest: 30
+Longest: 36
+Longest: 32
+Longest: 20
+Longest: 45
+Longest: 58
+Longest: 32
+Longest: 49
+Longest: 38
+Longest: 33
+Longest: 56
+Longest: 22
+Longest: 45
+Longest: 18
+Longest: 79
+Longest: 68
+Longest: 40
+Longest: 39
+Longest: 116
 **********************************************
 Target sequence size:             141
 Query sequence size:              290
@@ -38,7 +66,7 @@ Query offset:                     214
 Target aligned basepairs:         62
 Query aligned basepairs:          62
 Raw Score:                        -1
-Identity score:                   0.645161
+Identity score:                   0.596774
 Total Edit Count                  25
 Mean Contiguity length            0
 Mod-Smith-waterman score:         13
@@ -50,6 +78,35 @@ Sbjct:      1 RPLDPKGSLADLRVRMNEIKLEIQPQTGGSALGELLACSSEALVDGRLLGIDSIRFAMLQAAG 63
 
 
 
-Summary Sample09_Contig_000_0454040_000 frame:2- vs. gi|628058643|ref|XP_007695643.1|_hypothetical_protein_COCSADRAFT_60165,_partial_[Bipolaris_sorokiniana_ND90Pr] score: 1.50794e-09 q-coords: 214 276 t-coords: 1 63 0.645161 1.50794e-09
+Summary Sample09_Contig_000_0454040_000 frame:3- vs. gi|628058643|ref|XP_007695643.1|_hypothetical_protein_COCSADRAFT_60165,_partial_[Bipolaris_sorokiniana_ND90Pr] score: 2.44598e-07 q-coords: 214 276 t-coords: 1 63 0.596774 2.44598e-07
 
 
+Longest: 29
+Longest: 64
+Longest: 39
+Longest: 86
+Longest: 62
+Longest: 61
+Longest: 36
+Longest: 39
+Longest: 13
+Longest: 49
+Longest: 30
+Longest: 19
+Longest: 30
+Longest: 25
+Longest: 47
+Longest: 9
+Longest: 67
+Longest: 30
+Longest: 68
+Longest: 46
+Longest: 28
+Longest: 54
+Longest: 25
+Longest: 28
+Longest: 29
+Longest: 39
+Longest: 34
+Longest: 20
+Longest: 45
