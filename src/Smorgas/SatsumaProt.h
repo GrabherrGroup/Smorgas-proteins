@@ -140,7 +140,7 @@ private:
   svec<int> hit_ref;
   svec<int> hit_diff;
   svec<int> contrib;
-  svec<int> filter1Passed;
+  svec<int> contribOffset;
   ReducedAA m_rr;
   SatsumaProtParams params;
 };
