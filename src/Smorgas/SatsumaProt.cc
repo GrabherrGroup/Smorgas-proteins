@@ -119,9 +119,9 @@ void SatsumaProt::alignAll(ostream & o) {
       allhits.push_back(Hit(i, 10));
     }
     int failedAttempts = 0; //Keep track of failed attempts & stop if reach given limit
-    bool hit = false;
+    int hitCount = 0;
     for (int x=0; x<allhits.isize() && failedAttempts<params.allowFailHits; x++) {
-      if (!params.bExhaust && x >= params.limit) {
+      if (!params.bExhaust && hitCount >= params.limit) {
 	FILE_LOG(logDEBUG1) << "Sequence " << name << ". "
                             << "Displaying the first " << params.limit 
                             << ", there are " << allhits.isize()-params.limit << " more.";
@@ -153,17 +153,18 @@ void SatsumaProt::alignAll(ostream & o) {
 	
       if (eVal< params.eValThresh) {
         dp.GetAlignment().print(0, 1, o, 80, true);
-        hit = true;
+        hitCount++;
         o << "Summary " << name << " vs. " << ref.NameClean(allhits[x].Contig()) << " score: " << pVal;
         o << " q-coords: " << dp.GetQueryStart() << " " << dp.GetQueryStop();
         o << " t-coords: " << dp.GetTargetStart() << " " << dp.GetTargetStop();
         o << " " << dp.GetIdentity() << " " << pVal;
         o << endl << endl << endl;
+        failedAttempts = 0;
       } else  {
         failedAttempts++;
       }
     }
-    if(hit) {totalHits++; }
+    if(hitCount>0) {totalHits++; }
   }
   FILE_LOG(logINFO)<<"********************  "<<totalHits<<"     out of "<<i+1;    
 }
@@ -259,8 +260,9 @@ void SatsumaProt::filterTopHits_3(DNAVector d) {
   const int lim3 = contrib.isize();
   double threshold = 0.01;
   for (int j=0; j<lim3; j++) {
-    if ((float)contrib[j]/ref[j].size() >= threshold)
+    if ((float)contrib[j]/ref[j].size() >= threshold) {
       allhits.push_back(Hit(j, contrib[j]));
+    }
     contrib[j] = 0;
     contribOffset[j] = 0;
   }
