@@ -17,6 +17,11 @@
 
 const string sep = "%~!";
 
+#define ERROR_FORMAT 1
+#define ERROR_TOOMANY 2
+#define ERROR_TOOFEW 3
+#define ERROR_TOOMUCH 4
+
 class ReqHandler : public IRequestHandler
 {
 public:
@@ -63,8 +68,25 @@ public:
 	string data;
 	m_pWebServer->GetVariable(conn, data, "input_1");
 	cout << "Writing data: " << id << endl;
-	WriteFile(data, conn, id);
-	m_pWebServer->SendHTMLFile(conn, "please_wait.html");
+	int ret = WriteFile(data, conn, id);
+	if (ret == 0) {
+	  m_pWebServer->SendHTMLFile(conn, "please_wait.html");
+	} else {
+	  switch(ret) {
+	  case 1:
+	    m_pWebServer->SendHTMLFile(conn, "oops1.html");
+	    break;
+	  case 2:
+	    m_pWebServer->SendHTMLFile(conn, "oops2.html");
+	    break;
+	  case 3:
+	    m_pWebServer->SendHTMLFile(conn, "oops3.html");
+	    break;
+	  case 4:
+	    m_pWebServer->SendHTMLFile(conn, "oops4.html");
+
+	  }
+	}
 	m_idsys.Inc(id);
       } else {
 	cout << "Try SendReadResult w/ ID " << id << endl;
@@ -167,7 +189,7 @@ private:
     return s;
   }
 
-  void WriteFile(const string & data, struct mg_connection *conn, const string & id);
+  int WriteFile(const string & data, struct mg_connection *conn, const string & id);
   bool ReadSendResult(struct mg_connection *conn, const string & id);
   int m_discard;  
   //int m_counter;
@@ -185,7 +207,7 @@ private:
   
 };
 
-void ReqHandler::WriteFile(const string & data, struct mg_connection *conn, const string & id)
+int ReqHandler::WriteFile(const string & data, struct mg_connection *conn, const string & id)
 {
   m_discard = 0;
 
@@ -202,7 +224,7 @@ void ReqHandler::WriteFile(const string & data, struct mg_connection *conn, cons
   //;SyncConnClient clie
   int n = strlen(data.c_str());
   if (n < 5)
-    return;
+    return ERROR_TOOFEW;
 
   string input = IDString(conn, id) + ".input.fasta";
   string output = IDString(conn, id) + ".output";
@@ -222,20 +244,66 @@ void ReqHandler::WriteFile(const string & data, struct mg_connection *conn, cons
 
  
   bool b = false;
+  int seq_num = 0;
+
+  int seq_amount = 0;
+
+  bool bLF = false;
+  bool bFirst = true;
+  int valid_seq = 0;
   for (int i=0; i<n; i++) {
     //cout << (int)data[i] << " " << data[i] << endl;
     //if (data[i] < 'A' || data[i] > 'Z')
     //continue;
 
  
-   if (data[i] == 13 || data[i] == ' ')
+    if (data[i] == 13 || data[i] == ' ')
       continue;
-
-   if (!b && data[i] != '>')
-     fprintf(pOut, ">UserQuery\n");
-   b = true;
-
+    
+    if (!b && data[i] != '>')
+      fprintf(pOut, ">UserQuery\n");
+    b = true;
+    
     fprintf(pOut, "%c", data[i]);
+    if (data[i] == '>') {
+      cout << "Found header" << endl;
+     
+      if (!bFirst && (!bLF || valid_seq < 10)) {
+	cout << "Valid: " << valid_seq << endl;
+	fprintf(pOut, "ERROR: Format!\n");
+	fclose(pOut);
+	return ERROR_FORMAT;
+      }
+      bFirst = false;
+      valid_seq = 0;
+      bLF = false;
+      seq_num++;
+      if (seq_num > 10) {
+	fprintf(pOut, "ERROR: Too many!\n");
+	fclose(pOut);
+	return ERROR_TOOMANY;
+      }
+    }
+
+    if (data[i] == 10) {
+      cout << "Found LF" << endl;
+      bLF = true;
+    }
+
+    if (bLF)
+      valid_seq++;
+
+    seq_amount++;
+    if (seq_amount > 20000) {
+      fprintf(pOut, "ERROR: Too much\n");
+      fclose(pOut);
+      return ERROR_TOOMUCH;
+    }
+  }
+  if (valid_seq < 10) {
+    fprintf(pOut, "ERROR: Format!\n");
+    fclose(pOut);
+    return ERROR_FORMAT;
   }
   fprintf(pOut, "\n");
   fclose(pOut);
@@ -245,6 +313,7 @@ void ReqHandler::WriteFile(const string & data, struct mg_connection *conn, cons
   m_pTrans->SendWait(server_message.c_str());
   delete m_pTrans;
   m_pTrans = NULL;
+  return 0;
 
 }
  
