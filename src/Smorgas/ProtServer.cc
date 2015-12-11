@@ -74,7 +74,7 @@ int main( int argc, char** argv )
   commandArg<string> appLogCmmd("-l", "Application logging file","application.log");
 
   commandLineParser P(argc,argv);
-  P.SetDescription("Satsuma-based (cross-correlation) protein alignment tool. Server (STUPID IMPLEMENTATION).");
+  P.SetDescription("Satsuma-based (cross-correlation) protein alignment tool - server.");
   P.registerArg(aStringCmmd);
   //P.registerArg(bStringCmmd);
   P.registerArg(dStringCmmd);
