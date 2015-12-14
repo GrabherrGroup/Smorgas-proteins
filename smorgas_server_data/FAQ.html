@@ -6,51 +6,60 @@
     <title>Frequently asked questions</title>
   </head>
   <body>
-    <form method="POST" action="/"> <input value="Back to main page"
-        type="submit"> </form>
+    <form method="POST" action="/"> <input value="Back to main page" type="submit"> </form>
     <br>
     <meta name="Title" content="">
     <p class="MsoNormal"><big><b><span style="font-family:&quot;Times
             New Roman&quot;">Questions and Answers<o:p></o:p></span></b></big></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+        Roman&quot;"><o:p>&nbsp;<br></o:p></span></p><p class="MsoNormal"><br><span style="font-family:&quot;Times New
+        Roman&quot;"><o:p><span style="font-family:&quot;Times New
+        Roman&quot;">Q: Why is it called “sm</span><span style="font-family:&quot;Times
+        New Roman&quot;;mso-ansi-language: SV" lang="SV">örgås”?<br>
+</span>
+<p class="MsoNormal"><span style="font-family:&quot;Times
+        New Roman&quot;;mso-ansi-language: SV" lang="SV">A: </span><span style="font-family:&quot;Times New
+        Roman&quot;"><span style="font-family:&quot;Times New
+        Roman&quot;"><span style="font-family:&quot;Times New
+        Roman&quot;">Sm</span><span style="font-family:&quot;Times New
+        Roman&quot;;mso-ansi-language:SV" lang="SV">örgås </span></span></span><span style="font-family:&quot;Times New Roman&quot;"><big>can
+        loosely be translated from Swedish as “sandwich”, or, more accurately, bread with butter and some other stuff on it. This other stuff, typically cheese, ham, seafood etc. has a lot of <i>proteins,</i> hence the name. And yes, the word </big></span><span style="font-family:&quot;Times New
+        Roman&quot;"><span style="font-family:&quot;Times New
+        Roman&quot;">“sm</span><span style="font-family:&quot;Times
+        New Roman&quot;;mso-ansi-language: SV" lang="SV">örgås” is fun to pronounce.<br></span></span></p>
+<big>
+    </big><p class="MsoNormal"><big><span style="font-family:&quot;Times New
+        Roman&quot;"><o:p></o:p></span></big></p><br></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: Why do we need another online alignment web
-        site? Isn’t <a href="http://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI’s
-          blast</a> service sufficient?<o:p></o:p></span></p>
+        Roman&quot;">Q: What is the main difference between </span><span style="font-family:&quot;Times New
+        Roman&quot;"><span style="font-family:&quot;Times New
+        Roman&quot;">sm</span><span style="font-family:&quot;Times New
+        Roman&quot;;mso-ansi-language:SV" lang="SV">örgås and, say the</span> <a href="http://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI’s
+          blast</a> service?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A: It is all about time and responsiveness.
-        Usability studies have shown that waiting for a few seconds for
-        results is perfectly acceptable, as is waiting half an hour or
-        more for long batch processing jobs. In between, though, resides
-        an “unfavorable valley”, meaning that a few minutes of response
-        time are too long to stare at the screen, yet it is not enough
-        time to get a coffee and a sandwich. Unfortunately, NCBI’s
-        blastp and blastx hit this unfavorable valley spot on. Our
-        original solution was to make protein searches really slow,
-        hence the name “sm</span><span style="font-family:&quot;Times
-        New Roman&quot;;mso-ansi-language: SV" lang="SV">örgås”,</span><span
-        style="font-family:&quot;Times New Roman&quot;"> which can
-        loosely be translated from Swedish as “sandwich”. However, our
-        engineers found that too difficult a task, so we made it really
-        fast. In short: we wanted to present <i
-          style="mso-bidi-font-style:normal">blast</i>-quality results
-        at the response time of the much faster <i
-          style="mso-bidi-font-style:normal">blat</i>.<o:p></o:p></span></p>
+        Roman&quot;">A: </span><span style="font-family:&quot;Times New
+        Roman&quot;"><span style="font-family:&quot;Times New
+        Roman&quot;"></span><span style="font-family:&quot;Times New
+        Roman&quot;"><span style="font-family:&quot;Times New
+        Roman&quot;">Sm</span><span style="font-family:&quot;Times New
+        Roman&quot;;mso-ansi-language:SV" lang="SV">örgås is about easy setup of a web server, customization of databases, etc., ideally with as little formatting and editing as possible. Its look-and-feel can also be adapted to that it integrates seamlessly with other services that are provided for a local community, for example when searching databases of specific organisms or taxonomic groups. Moreover, a local installation with a limited number of users requires less computational resources, while delivering much more responsiveness, i.e. search results should come back in seconds rather than minutes.</span></span></span><br><big><span style="font-family:&quot;Times New
+        Roman&quot;"><o:p>&nbsp;</o:p></span></big></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+        Roman&quot;">Q: What computer do I need to set up the web server? <o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">Q: Why don’t you use <i
-          style="mso-bidi-font-style:normal">blat</i> then? <o:p></o:p></span></p>
-    <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A: Because on a large protein database such as <i
-          style="mso-bidi-font-style:normal">nr</i>, sm</span><span
-        style="font-family:&quot;Times New
-        Roman&quot;;mso-ansi-language:SV" lang="SV">örgås is even faster
-        than blat.</span><span style="font-family:&quot;Times New
+        Roman&quot;">A: That depends on the size of your database, the number of users, etc</span><span style="font-family:&quot;Times New
+        Roman&quot;;mso-ansi-language:SV" lang="SV">., and of course on the choice of the aligner core. If you use the built-in aligner, you will need roughly 15 times the memory (in bytes) that the database has on disk. And having a fair number of cores also helps. For example, the full <i>nr</i> database (as of spring 2015) can be hosted on a 256GB 48-core AMD server, with a response time of ca. 2 seconds for a single nucleotide sequence.<br></span></p><p class="MsoNormal"><br><span style="font-family:&quot;Times New
+        Roman&quot;;mso-ansi-language:SV" lang="SV"></span><span style="font-family:&quot;Times New
         Roman&quot;"><o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;"><o:p>&nbsp;</o:p></span></p>
+        Roman&quot;"><o:p><p class="MsoNormal"><span style="font-family:&quot;Times New
+        Roman&quot;">Q: If I have a fairly small database, can I run it on my MacBook? <o:p></o:p></span></p>
+    <span style="font-family:&quot;Times New
+        Roman&quot;">A: Yes you can, but if you align many sequences on all cores that you have, don't put the Mac on your lap - it will run very, *very* hot...</span><span style="font-family:&quot;Times New
+        Roman&quot;;mso-ansi-language:SV" lang="SV">&nbsp; </span><br></o:p></span></p><p class="MsoNormal"><br><span style="font-family:&quot;Times New
+        Roman&quot;"><o:p></o:p></span></p><p class="MsoNormal"><span style="font-family:&quot;Times New
+        Roman&quot;"><o:p>Q: Why are you telling me these two points above now, after I crashed our lab server and burnt myself?</o:p></span></p><p class="MsoNormal"><span style="font-family:&quot;Times New
+        Roman&quot;"><o:p>A: Nobody is perfect.<br><br></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;">Q: I don’t see an e-value. How do you know how good
         an alignment is?<o:p></o:p></span></p>
@@ -107,11 +116,9 @@
         aligner’s name? I mean, how do I even get them on my keyboard?
         Are you kidding me here?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
-        Roman&quot;">A: Dude, just copy and paste the word “sm</span><span
-        style="font-family:&quot;Times New Roman&quot;;
-        mso-ansi-language:SV" lang="SV">örgås”</span><span
-        style="font-family:&quot;Times New Roman&quot;"> from our web
-        site.<o:p></o:p></span></p>
+        Roman&quot;">A: Dude, just copy and paste the word “sm</span><big><span style="font-family:&quot;Times New Roman&quot;;
+        mso-ansi-language:SV" lang="SV">örgås”</span></big><span style="font-family:&quot;Times New Roman&quot;"><big> from our web
+        site. If that doesn't work, just call it "smorgas", as in the name of the repo.</big><o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
@@ -125,13 +132,13 @@
         Roman&quot;"><o:p><br>
         </o:p></span><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>
-          <p class="MsoNormal"><span style="font-family:&quot;Times New
+          </o:p></span></p><p class="MsoNormal"><span style="font-family:&quot;Times New
               Roman&quot;">Q: How many NCBI blastp developers does it
               take to change a light bulb?<o:p></o:p></span></p>
           <p class="MsoNormal"><span style="font-family:&quot;Times New
               Roman&quot;">A: This page will refresh in 17 second(s)...
               29 second(s)... 53 second(s)...<o:p></o:p></span></p>
-          <span style="font-family:&quot;Times New Roman&quot;"><o:p></o:p></span>&nbsp;</o:p></span></p>
+          <span style="font-family:&quot;Times New Roman&quot;"><o:p></o:p></span><p></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;">Q: Will there be free food?<o:p></o:p></span></p>
     <p class="MsoNormal"><span style="font-family:&quot;Times New
@@ -141,13 +148,11 @@
     <p class="MsoNormal"><span style="font-family:&quot;Times New
         Roman&quot;"><o:p>&nbsp;</o:p></span></p>
     <meta name="Keywords" content="">
-    <meta http-equiv="Content-Type" content="text/html;
-      charset=windows-1252">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <meta name="ProgId" content="Word.Document">
     <meta name="Generator" content="Microsoft Word 14">
     <meta name="Originator" content="Microsoft Word 14">
-    <link rel="File-List"
-href="file://localhost/Users/manfred/Library/Caches/TemporaryItems/msoclip/0clip_filelist.xml">
+    <link rel="File-List" href="file://localhost/Users/manfred/Library/Caches/TemporaryItems/msoclip/0clip_filelist.xml">
     <!--[if gte mso 9]><xml>
  <o:DocumentProperties>
   <o:Revision>0</o:Revision>
@@ -165,8 +170,7 @@ href="file://localhost/Users/manfred/Library/Caches/TemporaryItems/msoclip/0clip
   <o:AllowPNG/>
  </o:OfficeDocumentSettings>
 </xml><![endif]-->
-    <link rel="themeData"
-href="file://localhost/Users/manfred/Library/Caches/TemporaryItems/msoclip/0clip_themedata.xml">
+    <link rel="themeData" href="file://localhost/Users/manfred/Library/Caches/TemporaryItems/msoclip/0clip_themedata.xml">
     <!--[if gte mso 9]><xml>
  <w:WordDocument>
   <w:View>Normal</w:View>
@@ -549,5 +553,6 @@ table.MsoNormalTable
 	mso-hansi-theme-font:minor-latin;}
 </style>
 <![endif]--><!--StartFragment--><!--EndFragment-->
-  </body>
-</html>
+  
+
+</body></html>
