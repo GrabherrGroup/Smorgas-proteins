@@ -16,6 +16,11 @@ or
 
 http://localhost:8080
 
+to kill all Processes, type
+
+./killSmorgas
+
+
 To set up the server on your own data, see:
 
 http://grabherrgroup.github.io/Smorgas-proteins/SmorgasManual.html
