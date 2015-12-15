@@ -1,0 +1,3 @@
+./KillProcesses ProtServer 
+./KillProcesses Tangerine
+./KillProcesses Smorgas

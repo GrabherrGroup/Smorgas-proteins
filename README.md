@@ -1,4 +1,21 @@
 Smorgas-proteins
-================
+(c) Manfred G. Grabherr
+============================
 
-An Ultra Fast Aligner for Protein Sequences
+A web interface for protein and sequence alignments.
+
+To test, type
+
+./test_smorgas
+
+which will run the server on refseq proteins from human and mouse. To access the server, pint your browser to 
+
+http://<yourservername>:8080
+
+or
+
+http://localhost:8080
+
+To set up the server on your own data, see:
+
+http://grabherrgroup.github.io/Smorgas-proteins/SmorgasManual.html
