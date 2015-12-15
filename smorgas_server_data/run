@@ -1,2 +1,3 @@
+rm ID*
 ../SmorgasCommLayer -c config.txt -server localhost > scl.out &
 ../TangerineServer -t taxonomy.txt > ts.out &

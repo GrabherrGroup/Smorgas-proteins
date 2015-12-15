@@ -1,6 +1,4 @@
-plants		refseq/refseq_plants.faa
-mammals		refseq/refseq_vertebrate_mammalian.faa
-vertebrates	refseq/refseq_vertebrate_other.faa
-invertebrates 	refseq/invertebrate.proteins.faa
-protozoa 	refseq/protozoa.protein.faa
-fungi 		refseq/fungi.proteins.fa
+mousehuman0		mouse_human/refseq_human_mouse.faa.0
+mousehuman1		mouse_human/refseq_human_mouse.faa.1
+mousehuman2		mouse_human/refseq_human_mouse.faa.2
+mousehuman3		mouse_human/refseq_human_mouse.faa.3
