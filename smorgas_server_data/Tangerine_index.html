@@ -9,21 +9,21 @@
   <body>
     <font face="Helvetica, Arial, sans-serif"><b><big><big><big>Welcome
               to the Smörgås Protein Alignment Web Server.</big></big></big></b></font><br>
+    <br>
     <img alt="Tangerine logo (placeholder)" src="semmel.jpg"
       height="96" width="170" align="top"><br>
     <br>
-    Please enter your sequences in fasta format (protein or nucleotides):<br>
-    ---------------<br>
+    <br>
+    Please enter your sequences (max. 10 seqs) in fasta format (protein or nucleotides):<br>
+    
     <br>
     <form method="POST" action="/handle_post_request">
-    <textarea name="input_1" size="60" cols="60" rows="100" style="width:500px; height:200px;"  /> </textarea> <br/>
+    <textarea name="input_1" size="60" cols="60" rows="100" style="width:530px; height:200px;margin-bottom:8px;margin-top:10px;"  /> </textarea> <br/>
 
-    <input type="submit" value="Submit"/>
+    <input type="submit" value="Submit" style="width:80px;height:25px;"/>
     </form>   
     <br>
-    ---------------<br>
-    <br>
-    <br>
+   
     Server is running Smörgås 0.1.0, alignments provided by the Smörgås protein alignment engine.<br> 
     <br>
     If you have questions, see also the <a href="FAQ.html"> Question and Answer page. </a>  
@@ -36,10 +36,11 @@
     Smörgås is available as source code under the LGPL from <a href="https://github.com/GrabherrGroup/Smorgas-proteins"> GitHub.</a>
     <br>
      <br>
+     <br>
     <a href="http://www.scilifelab.uu.se/"><img alt="SciLifeLab"
-        src="scilifelab.jpg" height="80" width="280" border="0"></a><a
+        src="scilifelab.jpg" height="80" width="280" border="0"></a> <a
       href="http://www.uu.se/"><img alt="UU" src="uu.png" height="93"
-        width="98" border="0"></a><a
+        width="98" border="0"></a> <a
       href="http://www.bils.se/"><img alt="BILS" src="bils_logo.png" height="93"
         width="128" border="0"></a><br>
     <br>
