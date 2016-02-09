@@ -48,6 +48,7 @@ public:
     m_pWebServer->AddRouteThrough("temp.jpeg");
     m_pWebServer->AddRouteThrough("temp.png");
     m_pWebServer->AddRouteThrough("semmel.jpg");
+    m_pWebServer->AddRouteThrough("smorgas-logo.jpg");
     m_pWebServer->AddRouteThrough("scilifelab.jpg");
     m_pWebServer->AddRouteThrough("uu.png");
     m_pWebServer->AddRouteThrough("bils_logo.png");
