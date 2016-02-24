@@ -295,7 +295,7 @@ int ReqHandler::WriteFile(const string & data, struct mg_connection *conn, const
       valid_seq++;
 
     seq_amount++;
-    if (seq_amount > 20000) {
+    if (seq_amount > 4000) {
       fprintf(pOut, "ERROR: Too much\n");
       fclose(pOut);
       return ERROR_TOOMUCH;
