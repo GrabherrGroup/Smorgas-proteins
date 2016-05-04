@@ -24,6 +24,10 @@
 #define MSG_CONFIRM 0
 #endif 
 
+#ifdef __APPLE_CC__    
+#define MSG_CONFIRM 0
+#endif
+
 void w_error(const char * msg) {
   //printf("ERROR: %s\n", msg);
   //fflush(stdout);
