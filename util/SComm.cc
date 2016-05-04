@@ -25,7 +25,7 @@
 #endif 
 
 #ifdef __APPLE_CC__    
-#define MSG_CONFIRM 0
+#define MSG_NOSIGNAL 0
 #endif
 
 void w_error(const char * msg) {
