@@ -2,14 +2,14 @@
 #define _SCOMM_H_
 
 /* the port users will be connecting to */
-#define MYPORT 3491
+#define MYPORT 3494
 
 class SCommTransmitter
 {
  public:
   virtual ~SCommTransmitter() {}
 
-  virtual bool SendWait(const char * message) = 0;
+  virtual bool SendWait(const char * message, int size = -1) = 0;
   
 };
 
