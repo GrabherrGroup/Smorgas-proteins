@@ -95,7 +95,8 @@ public:
 	  //m_counter = 0;
 	  m_idsys.Remove(id);
 	} else {
-	  m_pWebServer->SendHTMLFile(conn, "please_wait.html");
+	  SendStatus(conn);
+	  //m_pWebServer->SendHTMLFile(conn, "please_wait.html");
 	  m_idsys.Inc(id);	 
 	}
 	    //m_pWebServer->SendHTMLFile(conn, "Results.html");     
@@ -184,6 +185,39 @@ public:
   }
 
 private:
+  void SendStatus(struct mg_connection *conn) {
+    m_pWebServer->SendData(conn, "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
+    m_pWebServer->SendData(conn, "<html>");
+    m_pWebServer->SendData(conn, "  <head>");
+    m_pWebServer->SendData(conn, "    <meta http-equiv=\"refresh\" content=\"1\">");
+    m_pWebServer->SendData(conn, "    <meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">");
+    m_pWebServer->SendData(conn, "    <title>Please wait</title>");
+    m_pWebServer->SendData(conn, "  </head>");
+    m_pWebServer->SendData(conn, "  <body>");
+    m_pWebServer->SendData(conn, "    <big><big>.... Please wait.... processing request....</big></big><br>");
+    m_pWebServer->SendData(conn, "    <br>");
+
+    FlatFileParser parser;
+  
+    parser.Open("systemstatus.txt");
+
+    while (parser.ParseLine()) {
+      if (parser.GetItemCount() == 0)
+	continue;
+      m_pWebServer->SendData(conn, parser.Line());
+      m_pWebServer->SendData(conn, "<br>");
+    }
+
+    
+    m_pWebServer->SendData(conn, "    <form method=\"POST\" action=\"/\"> ");
+    m_pWebServer->SendData(conn, "      <input type=\"submit\" value=\"Back to main page\"/>");
+    m_pWebServer->SendData(conn, "    </form>");
+    
+    m_pWebServer->SendData(conn, "  </body>");
+    m_pWebServer->SendData(conn, "</html>");
+
+  }
+
   string GetID() {
     string s = Stringify(m_id_counter);
     m_id_counter++;

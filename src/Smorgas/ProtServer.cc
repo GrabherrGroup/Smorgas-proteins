@@ -122,6 +122,17 @@ int main( int argc, char** argv )
   double eThresh  = P.GetDoubleValueFor(eThreshCmmd);
   string logFile  = P.GetStringValueFor(appLogCmmd);
  
+
+  char alive[256];
+  sprintf(alive, "alive_port%d", port);
+
+
+  FILE * pAlive = fopen(alive, "w");
+  fprintf(pAlive, "starting service, please wait\n");
+  fclose(pAlive);
+
+
+
   FILE* pFile = fopen(logFile.c_str(), "w");
   Output2FILE::Stream()     = pFile;
   FILELog::ReportingLevel() = logINFO; 
@@ -143,7 +154,11 @@ int main( int argc, char** argv )
   //string QUERY = "query.tangerine";
 
   SyncConnServer ss(server, port);
-  
+
+  //FILE * pAlive = fopen(alive, "w");
+  //fprintf(pAlive, "initialized\n");
+  //fclose(pAlive);
+
   do {
     //while (p == NULL) {
     //  usleep(100000);
@@ -152,13 +167,20 @@ int main( int argc, char** argv )
     //fclose(p);
     //p = NULL;
     //cout << "Found input." << endl;
+    pAlive = fopen(alive, "w");
+    fprintf(pAlive, "ready\n");
+    fclose(pAlive);
     
     //protAligner.readQuery(QUERY); 
     string request;
     cout << "Waiting for request." << endl;
     ss.WaitForRequest(request);
     cout << "Got one, processing/" << endl;
-    
+   
+    pAlive = fopen(alive, "w");
+    fprintf(pAlive, "busy\n");
+    fclose(pAlive);
+   
     vecDNAVector query;
     SetDNAFromString(query, request);
     cout << "Converted.  " << endl;
@@ -179,6 +201,11 @@ int main( int argc, char** argv )
     
     //string cmmd = "rm " + QUERY;
     //int ret = system(cmmd.c_str());
+
+    //pAlive = fopen(alive, "w");
+    //fprintf(pAlive, "ready\n");
+    //fclose(pAlive);
+
 
   } while (true);
 }

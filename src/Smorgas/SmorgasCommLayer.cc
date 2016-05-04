@@ -221,6 +221,10 @@ public:
       cout << "Threads started." << endl;
   }
   int NumThreads() const {return m_threads.isize();}
+  
+  int Port(int i) const {return m_port[i];}
+  int GetPorts() const {return m_port.isize();}
+
 private:
   svec<string> m_dbname;
   svec<string> m_db;
@@ -353,7 +357,27 @@ int main(int argc,char** argv)
     cout << tmp.str() << endl;
     dd.Feed(tmp.str());
     
+    int checkCounter = 0;
     while (true) {
+      if (checkCounter % 100 == 0) {
+	FILE *pStatus = fopen("systemstatus.txt", "w");
+	for (int x=0; x<dd.GetPorts(); x++) {
+	  char alive[256];
+	  sprintf(alive, "alive_port%d", dd.Port(x));
+	  FILE * pCheck = fopen(alive, "r");
+	  if (pCheck == NULL) {
+	    fprintf(pStatus, "SYSTEM ERROR on port %d\n", dd.Port(x));
+	  } else {
+	    char text[512];
+	    strcpy(text, "Unknown\n");
+	    fgets(text, sizeof(text), pCheck);
+	    fprintf(pStatus, "Server on on port %d reports: %s", dd.Port(x), text);
+	    fclose(pCheck);
+	  }
+	}
+	fclose(pStatus);
+      }
+
       if (notifier.Counter() > 0) {
 	cout << "Counter=" << notifier.Counter() << endl;
       }
@@ -361,6 +385,8 @@ int main(int argc,char** argv)
 	break;
       usleep(100000);
     }
+
+
     cout << "Got it. " << endl;
     notifier.CloseOut();
     FILE * pDone = fopen(done.c_str(), "w");
